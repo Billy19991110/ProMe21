@@ -1,22 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
 </head>
+
 <body>
 
-    <% for ( var nationItem of nation ) { %> 
+    <style>
+        nav>ul {
+            background-color: rgb(230, 230, 230);
+            list-style: none;
+            /* 移除項目符號 */
+            margin: 0;
+            padding: 0;
+        }
 
-    <ul>
-        <li>
-            <%= nationItem.title %>
-        </li>
-    </ul>
+        /* 滑鼠移到 <a> 時變成深底淺色 */
+        nav li:hover {
+            background-color: rgb(115, 115, 115);
+            color: white;
+        }
 
-    <% } %>
-    
+        .flex-nav{
+            display: flex;
+        }
+    </style>
+
+
+    <nav>
+        <ul class="flex-nav" >
+            <% for ( var nationItem of nation ) { %>
+                <li>
+                    <%= nationItem.nationName %>
+                </li>
+                <% } %>
+        </ul>
+    </nav>
+
+
+
 </body>
+
 </html>

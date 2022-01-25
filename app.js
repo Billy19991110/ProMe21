@@ -25,7 +25,7 @@ app.get('/', function(req, res){
 
 //////////////拿國家資料/////////////////
 app.get('/nation', function(req, res){
-    conn.query('SELECT nationName FROM `nation`',
+    conn.query('SELECT * FROM `nation`',
     [],
     function(err, result){
         res.render('index.ejs',{
