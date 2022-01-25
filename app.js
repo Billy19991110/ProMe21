@@ -6,7 +6,7 @@ app.listen(3000);
 var mysql = require('mysql');
 
 var conn = mysql.createConnection({
-    database: 'demo',
+    database: 'test_v1',
     host: 'localhost',
     port: 3306,
     user: 'root',
@@ -25,7 +25,7 @@ app.get('/', function(req, res){
 
 //////////////拿國家資料/////////////////
 app.get('/nation', function(req, res){
-    conn.query('select * from `nation`',
+    conn.query('SELECT nationName FROM `nation`',
     [],
     function(err, result){
         res.render('index.ejs',{
