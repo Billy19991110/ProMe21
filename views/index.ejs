@@ -26,21 +26,32 @@
             color: white;
         }
 
-        .flex-nav{
+        .flex-nav {
             display: flex;
         }
     </style>
 
+    <div>
+        <nav>
+            <ul class="flex-nav">
+                <% for ( var nationItem of result ) { %>
+                    <li>
+                        <%= nationItem.nationName %>
+                    </li>
+                    <% } %>
+            </ul>
+        </nav>
+    </div>
 
-    <nav>
-        <ul class="flex-nav" >
-            <% for ( var nationItem of nation ) { %>
-                <li>
-                    <%= nationItem.nationName %>
-                </li>
-                <% } %>
-        </ul>
-    </nav>
+
+    <div>
+
+        <div> apple </div> <!-- 類別名稱 -->
+        <div>
+
+        </div>
+
+    </div>
 
 
 

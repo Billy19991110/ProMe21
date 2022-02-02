@@ -13,23 +13,25 @@ var conn = mysql.createConnection({
     password: 'root'
 });
 
-conn.connect(function(err){
+conn.connect(function (err) {
     console.log(err);
 })
 
 ///////////////////網頁首頁/////////////////////
-app.get('/', function(req, res){
-    res.render('index.ejs');
+app.get('/', function (req, res) {
+    conn.query('SELECT * FROM `nation`',
+        function (err, result) {
+            // nation = result
+            res.render('index.ejs', { result });
+        });
+    /* conn.query('SELECT * FROM `product`',
+        function (err, result) {
+            product = result
+        }); */
+
 })
 //////////////////網頁首頁/////////////////////
 
 //////////////拿國家資料/////////////////
-app.get('/nation', function(req, res){
-    conn.query('SELECT * FROM `nation`',
-    [],
-    function(err, result){
-        res.render('index.ejs',{
-            nation: result
-        });
-    });
+app.get('/nation', function (req, res) {
 })
