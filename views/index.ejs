@@ -6,35 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css">
+
+    <title>沒有霉有的代Go</title>
 </head>
 
 <body>
 
-    <style>
-        nav>ul {
-            background-color: rgb(230, 230, 230);
-            list-style: none;
-            /* 移除項目符號 */
-            margin: 0;
-            padding: 0;
-        }
-
-        /* 滑鼠移到 <a> 時變成深底淺色 */
-        nav li:hover {
-            background-color: rgb(115, 115, 115);
-            color: white;
-        }
-
-        .flex-nav {
-            display: flex;
-        }
-    </style>
-
+    <!-- header -->
     <div>
         <nav>
             <ul class="flex-nav">
-                <% for ( var nationItem of result ) { %>
+                <% for ( var nationItem of nation ) { %>
                     <li>
                         <%= nationItem.nationName %>
                     </li>
@@ -43,15 +26,29 @@
         </nav>
     </div>
 
+    <!-- header -->
+
+
+    <!-- body -->
 
     <div>
 
-        <div> apple </div> <!-- 類別名稱 -->
-        <div>
-
-        </div>
-
+        <% for (var Item of product) { %>
+            <div>
+                <!-- 類別名稱 -->
+                <%= Item.className %>
+                    <div>
+                        <div>
+                            <img src=" <%= Item.pictureSeat1%> " alt="">
+                            <div>
+                                <%= Item.productName %>
+                            </div>
+                        </div>
+                        <% } %>
+                    </div>
+            </div>
     </div>
+
 
 
 
