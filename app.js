@@ -32,7 +32,7 @@ app.get('/', function (req, res) {
 
 //////////////所有商品頁/////////////////
 app.get('/product', function (req, res) {
-    conn.query('SELECT * FROM `product`',
+    conn.query('SELECT * FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` JOIN `class` ON `product`.`classID` = `class`.`classID`',
         function (err, result) {
             // product = result
             res.render('product.ejs', { result });
