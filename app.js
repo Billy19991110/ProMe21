@@ -14,6 +14,7 @@ var conn = mysql.createConnection({
     port: 3306,
     user: 'root',
     password: 'root'
+
 });
 
 conn.connect(function (err) {
@@ -35,6 +36,16 @@ app.get('/product', function (req, res) {
     conn.query('SELECT * FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` JOIN `class` ON `product`.`classID` = `class`.`classID`',
         function (err, result) {
             // product = result
+            res.render('Allproduct.ejs', { result });
+        });
+})
+
+app.get('/product/:ID', function (req, res) {
+    var id = req.params.ID;
+    conn.query('SELECT * FROM `product`JOIN `picture` ON `product`.`productID` = `picture`.`productID`WHERE `product`.`productID` = ?',
+        [`${id}`],
+        function (err, result) {
             res.render('product.ejs', { result });
         });
+    console.log(`${id}`);
 })

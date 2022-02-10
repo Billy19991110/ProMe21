@@ -7,29 +7,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="/css/product.css">
-
-    <title>所有產品</title>
+    <title>產品介紹</title>
 </head>
 
 <body>
 
+    <% for (var Item of result) { %>
+        <div>
+            <%= Item.productName %>
+        </div>
 
-    <div>
+        <div>
+            <img src=" <%= Item.pictureSeat1 %>  " alt="">
+        </div>
 
-        <% for (var Item of result) { %>
-            <div>
-                <div>
-                    <div>
-                        <img src=" <%= Item.pictureSeat1%> " alt="">
-                        <div>
-                            <%= Item.productName %>
-                        </div>
-                    </div>
-                    <% } %>
-                </div>
-            </div>
-    </div>
+        <div>說明：</div>
 
+        <div>
+            <img src=" <%= Item.pictureSeat2 %>  " alt="">
+        </div>
+
+        <div>說明：</div>
+
+        <div>
+            <img src=" <%= Item.pictureSeat3 %>  " alt="">
+        </div>
+
+        <div>說明：</div>
+
+        <div>
+            <img src=" <%= Item.pictureSeat4 %>  " alt="">
+        </div>
+
+        <div>說明：</div>
+
+        <div>
+            <img src=" <%= Item.pictureSeat5 %>  " alt="">
+        </div>
+
+        <% } %>
 
 
 
