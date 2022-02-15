@@ -21,7 +21,7 @@ conn.connect(function (err) {
     console.log(err);
 })
 
-///////////////////網頁首頁/////////////////////
+////////////////網頁首頁//////////////////
 app.get('/', function (req, res) {
     conn.query('SELECT * FROM `nation` ; SELECT * FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` JOIN `class` ON `product`.`classID` = `class`.`classID`',
         function (err, result) {
@@ -29,7 +29,7 @@ app.get('/', function (req, res) {
         });
 
 })
-//////////////////網頁首頁/////////////////////
+///////////////網頁首頁//////////////////
 
 //////////////所有商品頁/////////////////
 app.get('/product', function (req, res) {
@@ -39,7 +39,9 @@ app.get('/product', function (req, res) {
             res.render('Allproduct.ejs', { result });
         });
 })
+//////////////所有商品頁/////////////////
 
+//////////////指定商品頁/////////////////
 app.get('/product/:ID', function (req, res) {
     var id = req.params.ID;
     conn.query('SELECT * FROM `product`JOIN `picture` ON `product`.`productID` = `picture`.`productID`WHERE `product`.`productID` = ?',
@@ -47,5 +49,5 @@ app.get('/product/:ID', function (req, res) {
         function (err, result) {
             res.render('product.ejs', { result });
         });
-    console.log(`${id}`);
 })
+//////////////指定商品頁/////////////////
