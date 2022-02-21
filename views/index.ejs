@@ -26,6 +26,7 @@
         </nav>
     </div>
 
+
     <!-- header -->
 
 
@@ -36,16 +37,15 @@
         <% for (var Item of product) { %>
             <div>
                 <!-- 類別名稱 -->
-                <%= Item.className %>
+                <div>
                     <div>
+                        <img src=" <%= Item.pictureSeat1%> " alt="">
                         <div>
-                            <img src=" <%= Item.pictureSeat1%> " alt="">
-                            <div>
-                                <%= Item.productName %>
-                            </div>
+                            <%= Item.productName %>
                         </div>
-                        <% } %>
                     </div>
+                    <% } %>
+                </div>
             </div>
     </div>
 
