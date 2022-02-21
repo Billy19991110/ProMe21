@@ -1,0 +1,98 @@
+
+
+header{
+    background-color: #555B6E;
+    color: #FAF9F9;
+    display:flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    width: 1366px;
+    height: 104px;
+    
+
+}
+
+/* .header{
+    width: 1366px;
+    height: 104px;
+} */
+
+nav .navItem{
+    display: flex;
+} 
+
+.headerNav{
+    display:flex;
+}
+
+/* div .ul .navMenu{
+    display: flex;
+    justify-content: space-around;
+}  */
+/* 專區的字橫向排列 */
+ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+} 
+
+li{
+    list-style-type: none;
+    
+        
+}
+
+/* .navMenuList{
+    display:flex;
+    justify-content: space-around;
+} */
+
+div.navIcon{
+    display: flex;
+    width: auto;
+    height: auto;
+
+} 
+
+
+img{
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+
+
+footer{
+    background-color: #555B6E;
+    color: #FAF9F9;
+    display:flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    width: 1366px;
+    height: 262px;
+    position: absolute;
+    bottom:0;
+}
+
+
+.offical{
+    display: flex;
+}
+
+/* 讓footer置底 */
+
+html , body{
+    height: 100%;
+}
+
+.wrapper{
+    min-height:100%;
+}
+
+
+
