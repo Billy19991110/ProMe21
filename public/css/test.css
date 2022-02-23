@@ -1,0 +1,85 @@
+/* header */
+.icon-pic{
+    width: 40px;
+    height: 40px;
+   
+  }
+  #user-icon{
+    padding: 10px;
+    margin: 5px;
+  }
+  #cart-icon{
+    padding: 10px;
+    margin: 5px;
+    margin-right: 10px;
+  }
+
+  .item-bar{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+
+  }
+  .itemlist{
+    list-style: none;
+    display: flex;
+    padding: 20px;
+  
+  }
+
+  /* footer */
+  .footerlist{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+  }
+  .footeritem{
+    list-style: none;
+    display: flex;
+    padding: 20px;
+  
+  }
+  .flexcenter{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* html, body {
+    height: 100%; /*外層高度100%*/
+    /* margin: 0; */
+  /* } */
+  /* footer{
+    height: 50px; /*設定footer本身高度*/
+  /* } */
+  /* .wrapper{
+    min-height: 100%;
+  }  */
+
+/* 商品列表 */
+.itembox{
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.item{
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    width: 50px;
+    height: 100px;
+}
+
+
+/* 分頁按鈕 */
+
+.pagination{
+    display: flex;
+    justify-content: center;
+}
