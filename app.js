@@ -27,9 +27,9 @@ conn.connect(function (err) {
 
 ////////////////網頁首頁//////////////////
 app.get('/', function (req, res) {
-    conn.query('SELECT * FROM `nation` ; SELECT * FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID`',
+    conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 ; SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 2; ',
         function (err, result) {
-            res.render('index.ejs', { nation: result[0], product: result[1] });
+            res.render('index.ejs', { japan: result[0], korea: result[1] });
         });
 })
 ///////////////網頁首頁//////////////////

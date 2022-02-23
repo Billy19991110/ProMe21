@@ -30,7 +30,7 @@
 
 
 
-	<title>Document</title>
+	<title>Dai GOAT</title>
 
 
 
@@ -49,9 +49,9 @@
 								<div style="float: left;"><a href="">logo</a></div>
 
 								<div style="float: right;">
-									<a href="" id="user-icon" class="icon-box"><img src="/素材圖片/icon/user  (1).png"
+									<a href="" id="user-icon" class="icon-box"><img src="/icon/user (1).png"
 											class="icon-pic"></a>
-									<a href="" id="cart-icon" class="icon-box"><img src="/素材圖片/icon/cart.png"
+									<a href="" id="cart-icon" class="icon-box"><img src="/icon/cart.png"
 											class="icon-pic"></a>
 								</div>
 
@@ -94,7 +94,7 @@
 						<!-- banner -->
 						<div class="Flex-container-banner">
 							<div class="flex-banner">
-								<img src="/素材圖片/banner/image.png">
+								<img src="">
 							</div>
 
 						</div>
@@ -114,99 +114,39 @@
 								<div class="carousel-title">
 									<span>日本專區</span>
 								</div>
+								
+								
 								<div class="carousel-inner">
 									<div class="carousel-item active">
 										<div class="flex-container">
-											<div class="flex">
-												<div class="card">
-													<img src="/素材圖片/商品圖/手燈/2020早安官燈.jpg" class="d-block">
-													<div class="container">
-														<b>Name1</b>
-														<p>Price</p>
+											<% for (var Japan of japan ) { %>
+												<div class="flex">
+													<div class="card">
+														<img src="<%= Japan.pictureSeat1 %>" class="d-block">
+														<div class="container">
+															<b>
+																<%= Japan.productName %>
+															</b>
+															<p>
+																<%= Japan.productPrice %>
+															</p>
+														</div>
 													</div>
 												</div>
-											</div>
-											<div class="flex">
-												<div class="card">
-													<img src="/素材圖片/商品圖/手燈/2021早安官燈.jpg" class="d-block">
-													<div class="container">
-														<b>Name1</b>
-														<p>Price</p>
-													</div>
-												</div>
-											</div>
-											<div class="flex">
-												<div class="card">
-													<img src="/素材圖片/商品圖/手燈/48官燈type1_1.jpg" class="d-block">
-													<div class="container">
-														<b>Name1</b>
-														<p>Price</p>
-													</div>
-												</div>
-											</div>
-											<div class="flex">
-												<div class="card">
-													<img src="/素材圖片/商品圖/手燈/48官燈type2_2.jpg" class="d-block">
-													<div class="container">
-														<b>Name1</b>
-														<p>Price</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="carousel-item">
-										<div class="flex-container">
-											<div class="flex">
-												<div class="card">
-													<img src="/素材圖片/商品圖/手燈/48官燈type1_3.jpg" class="d-block">
-													<div class="container">
-														<b>Name1</b>
-														<p>Price</p>
-													</div>
-												</div>
-											</div>
-											<div class="flex">
-												<div class="card">
-													<img src="/素材圖片/商品圖/手燈/48官燈type3_7.jpg" class="d-block">
-													<div class="container">
-														<b>Name1</b>
-														<p>Price</p>
-													</div>
-												</div>
-											</div>
-											<div class="flex">
-												<div class="card">
-													<img src="/素材圖片/商品圖/手燈/48官燈type3_9.jpg" class="d-block">
-													<div class="container">
-														<b>Name1</b>
-														<p>Price</p>
-													</div>
-												</div>
-											</div>
-											<div class="flex">
-												<div class="card">
-													<img src="/素材圖片/商品圖/手燈/48官燈type3_3.jpg" class="d-block">
-													<div class="container">
-														<b>Name1</b>
-														<p>Price</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+											<% } %>
+											
 
-									<button class="carousel-control-prev" type="button"
-										data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-										<span class="carousel-control-prev-icon" aria-hidden="false"></span>
-										<span class="visually-hidden">Previous</span>
-									</button>
-									<button class="carousel-control-next" type="button"
-										data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-										<span class="carousel-control-next-icon" aria-hidden="false"></span>
-										<span class="visually-hidden">Next</span>
-									</button>
-								</div>
+										<button class="carousel-control-prev" type="button"
+											data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+											<span class="carousel-control-prev-icon" aria-hidden="false"></span>
+											<span class="visually-hidden">Previous</span>
+										</button>
+										<button class="carousel-control-next" type="button"
+											data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+											<span class="carousel-control-next-icon" aria-hidden="false"></span>
+											<span class="visually-hidden">Next</span>
+										</button>
+							</div>
 						</section>
 
 
@@ -221,7 +161,7 @@
 										<div class="flex-container">
 											<div class="flex">
 												<div class="card">
-													<img src="/素材圖片/商品圖/手燈/2020早安官燈.jpg" class="d-block">
+													<img src="" class="d-block">
 													<div class="container">
 														<b>Name1</b>
 														<p>Price</p>
@@ -230,7 +170,7 @@
 											</div>
 											<div class="flex">
 												<div class="card">
-													<img src="/素材圖片/商品圖/手燈/2021早安官燈.jpg" class="d-block">
+													<img src="" class="d-block">
 													<div class="container">
 														<b>Name1</b>
 														<p>Price</p>
@@ -239,7 +179,7 @@
 											</div>
 											<div class="flex">
 												<div class="card">
-													<img src="/素材圖片/商品圖/手燈/48官燈type1_1.jpg" class="d-block">
+													<img src="" class="d-block">
 													<div class="container">
 														<b>Name1</b>
 														<p>Price</p>
@@ -248,7 +188,7 @@
 											</div>
 											<div class="flex">
 												<div class="card">
-													<img src="/素材圖片/商品圖/手燈/48官燈type2_2.jpg" class="d-block">
+													<img src="" class="d-block">
 													<div class="container">
 														<b>Name1</b>
 														<p>Price</p>
@@ -261,7 +201,7 @@
 										<div class="flex-container">
 											<div class="flex">
 												<div class="card">
-													<img src="/素材圖片/商品圖/手燈/48官燈type1_3.jpg" class="d-block">
+													<img src="" class="d-block">
 													<div class="container">
 														<b>Name1</b>
 														<p>Price</p>
@@ -270,7 +210,7 @@
 											</div>
 											<div class="flex">
 												<div class="card">
-													<img src="/素材圖片/商品圖/手燈/48官燈type3_7.jpg" class="d-block">
+													<img src="" class="d-block">
 													<div class="container">
 														<b>Name1</b>
 														<p>Price</p>
@@ -279,7 +219,7 @@
 											</div>
 											<div class="flex">
 												<div class="card">
-													<img src="/素材圖片/商品圖/手燈/48官燈type3_9.jpg" class="d-block">
+													<img src="" class="d-block">
 													<div class="container">
 														<b>Name1</b>
 														<p>Price</p>
@@ -288,7 +228,7 @@
 											</div>
 											<div class="flex">
 												<div class="card">
-													<img src="/素材圖片/商品圖/手燈/48官燈type3_3.jpg" class="d-block">
+													<img src="" class="d-block">
 													<div class="container">
 														<b>Name1</b>
 														<p>Price</p>
