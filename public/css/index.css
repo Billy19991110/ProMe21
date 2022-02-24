@@ -87,7 +87,14 @@ footer{
 }
 
 .flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+            align-items: center;
+}
+.divCenter {
     height: 50vh;
+    width: 70%;
     display: -webkit-flex;
     display: flex;
     -webkit-align-items: center;
@@ -96,10 +103,7 @@ footer{
             justify-content: center;
 }
 .flex {
-	-webkit-flex: initial;
-    flex: initial;
-	width: 15%;
-	min-width: 15%;
+	flex: 1;
 }
 
 .carousel-title{
@@ -142,8 +146,4 @@ footer{
 
 .flo{
     float: left;
-}
-
-.wid{
-    width: 100px;
 }

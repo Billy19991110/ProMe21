@@ -57,22 +57,10 @@
 
 								<div>
 									<ul class="item-bar">
-										<li class="dropdown">
-											<a href="#" data-toggle="dropdown" class="drop-toggle" type="button"
-												id="dropdownMenuButton">日本專區</a>
-											<ul class="dropdown-meau" style="padding: 0;" id="meau1"
-												aria-labelledby="dropdownMenuButton">
-												<li>
-													<a href="">偶像專區</a>
-												</li>
-												<li>
-													<a href="">二次元專區</a>
-												</li>
-
-											</ul>
-										</li>
-										<li class="itemlist"><button>韓國專區</button></li>
-
+										<li class="itemlist"><button><a
+													href="http://localhost:3000/japan">日本專區</a></button></li>
+										<li class="itemlist"><button><a
+													href="http://localhost:3000/korea">韓國專區</a></button></li>
 										<li class="itemlist"><button>許願清單</button></li>
 									</ul>
 
@@ -115,15 +103,15 @@
 									<span>日本專區</span>
 								</div>
 
-								<div>
+								<div class="divCenter">
 
 									<% for (let Japan of japan) { %>
 
-										<div class="flo">
+										<div>
 											<div>
 												<img src="<%= Japan.pictureSeat1 %>" class="picture">
 											</div>
-											<div class="wid">
+											<div>
 												<b>
 													<%= Japan.productName %>
 												</b>
@@ -148,15 +136,15 @@
 									<span>韓國專區</span>
 								</div>
 
-								<div>
+								<div class="divCenter">
 
 									<% for (let Korea of korea) { %>
 
-										<div class="flo">
+										<div>
 											<div>
 												<img src="<%= Korea.pictureSeat1 %>" class="picture">
 											</div>
-											<div class="wid">
+											<div>
 												<b>
 													<%= Korea.productName %>
 												</b>

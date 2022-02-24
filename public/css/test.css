@@ -19,6 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
   
 
   }
@@ -26,6 +27,7 @@
     list-style: none;
     display: flex;
     padding: 20px;
+    
   
   }
 

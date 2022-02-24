@@ -33,17 +33,21 @@ app.get('/', function (req, res) {
         });
 })
 
-///////////////網頁首頁//////////////////
-
-//////////////所有商品頁/////////////////
-app.get('/product', function (req, res) {
-    conn.query('SELECT * FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` JOIN `class` ON `product`.`classID` = `class`.`classID`',
+//////////////日本頁/////////////////
+app.get('/japan', function (req, res) {
+    conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1',
         function (err, result) {
-            // product = result
-            res.render('Allproduct.ejs', { result });
+            res.render('japan.ejs', { result });
         });
 })
-//////////////所有商品頁/////////////////
+
+//////////////韓國頁/////////////////
+app.get('/korea', function (req, res) {
+    conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 2',
+        function (err, result) {
+            res.render('korea.ejs', { result });
+        });
+})
 
 //////////////指定商品頁/////////////////
 app.get('/product/:ID', function (req, res) {
@@ -54,7 +58,7 @@ app.get('/product/:ID', function (req, res) {
             res.render('product.ejs', { result });
         });
 })
-//////////////指定商品頁/////////////////
+
 //INSERT INTO `buy` (`byID`, `userID`, `productID`, `productNUM`) VALUES (NULL, '1', '1', '1');
 /////////////新增商品到購物車/////////////
 app.get('/shopp', function (req, res) {
