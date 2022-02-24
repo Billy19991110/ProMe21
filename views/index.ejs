@@ -49,7 +49,7 @@
 								<div style="float: left;"><a href="">logo</a></div>
 
 								<div style="float: right;">
-									<a href="" id="user-icon" class="icon-box"><img src="/icon/user (1).png"
+									<a href="" id="user-icon" class="icon-box"><img src="/icon/user  (1).png"
 											class="icon-pic"></a>
 									<a href="" id="cart-icon" class="icon-box"><img src="/icon/cart.png"
 											class="icon-pic"></a>
@@ -114,39 +114,30 @@
 								<div class="carousel-title">
 									<span>日本專區</span>
 								</div>
-								
-								
-								<div class="carousel-inner">
-									<div class="carousel-item active">
-										<div class="flex-container">
-											<% for (var Japan of japan ) { %>
-												<div class="flex">
-													<div class="card">
-														<img src="<%= Japan.pictureSeat1 %>" class="d-block">
-														<div class="container">
-															<b>
-																<%= Japan.productName %>
-															</b>
-															<p>
-																<%= Japan.productPrice %>
-															</p>
-														</div>
-													</div>
-												</div>
-											<% } %>
-											
 
-										<button class="carousel-control-prev" type="button"
-											data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-											<span class="carousel-control-prev-icon" aria-hidden="false"></span>
-											<span class="visually-hidden">Previous</span>
-										</button>
-										<button class="carousel-control-next" type="button"
-											data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-											<span class="carousel-control-next-icon" aria-hidden="false"></span>
-											<span class="visually-hidden">Next</span>
-										</button>
-							</div>
+								<div>
+
+									<% for (let Japan of japan) { %>
+
+										<div class="flo">
+											<div>
+												<img src="<%= Japan.pictureSeat1 %>" class="picture">
+											</div>
+											<div class="wid">
+												<b>
+													<%= Japan.productName %>
+												</b>
+											</div>
+											<div>
+												<p>
+													<%= Japan.productPrice %>
+												</p>
+											</div>
+										</div>
+
+										<% } %>
+
+								</div>
 						</section>
 
 
@@ -156,99 +147,34 @@
 								<div class="carousel-title">
 									<span>韓國專區</span>
 								</div>
-								<div class="carousel-inner">
-									<div class="carousel-item active">
-										<div class="flex-container">
-											<div class="flex">
-												<div class="card">
-													<img src="" class="d-block">
-													<div class="container">
-														<b>Name1</b>
-														<p>Price</p>
-													</div>
-												</div>
-											</div>
-											<div class="flex">
-												<div class="card">
-													<img src="" class="d-block">
-													<div class="container">
-														<b>Name1</b>
-														<p>Price</p>
-													</div>
-												</div>
-											</div>
-											<div class="flex">
-												<div class="card">
-													<img src="" class="d-block">
-													<div class="container">
-														<b>Name1</b>
-														<p>Price</p>
-													</div>
-												</div>
-											</div>
-											<div class="flex">
-												<div class="card">
-													<img src="" class="d-block">
-													<div class="container">
-														<b>Name1</b>
-														<p>Price</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="carousel-item">
-										<div class="flex-container">
-											<div class="flex">
-												<div class="card">
-													<img src="" class="d-block">
-													<div class="container">
-														<b>Name1</b>
-														<p>Price</p>
-													</div>
-												</div>
-											</div>
-											<div class="flex">
-												<div class="card">
-													<img src="" class="d-block">
-													<div class="container">
-														<b>Name1</b>
-														<p>Price</p>
-													</div>
-												</div>
-											</div>
-											<div class="flex">
-												<div class="card">
-													<img src="" class="d-block">
-													<div class="container">
-														<b>Name1</b>
-														<p>Price</p>
-													</div>
-												</div>
-											</div>
-											<div class="flex">
-												<div class="card">
-													<img src="" class="d-block">
-													<div class="container">
-														<b>Name1</b>
-														<p>Price</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
 
-									<button class="carousel-control-prev" type="button"
-										data-bs-target="#carouselExampleIndicators-kr" data-bs-slide="prev">
-										<span class="carousel-control-prev-icon" aria-hidden="false"></span>
-										<span class="visually-hidden">Previous</span>
-									</button>
-									<button class="carousel-control-next" type="button"
-										data-bs-target="#carouselExampleIndicators-kr" data-bs-slide="next">
-										<span class="carousel-control-next-icon" aria-hidden="false"></span>
-										<span class="visually-hidden">Next</span>
-									</button>
+								<div>
+
+									<% for (let Korea of korea) { %>
+
+										<div class="flo">
+											<div>
+												<img src="<%= Korea.pictureSeat1 %>" class="picture">
+											</div>
+											<div class="wid">
+												<b>
+													<%= Korea.productName %>
+												</b>
+											</div>
+											<div>
+												<p>
+													<%= Korea.productPrice %>
+												</p>
+											</div>
+										</div>
+
+										<% } %>
+
 								</div>
+
+
+
+							</div>
 						</section>
 
 

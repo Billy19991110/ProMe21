@@ -8,62 +8,62 @@
 .icon-pic{
     width: 40px;
     height: 40px;
-   
-  }
-  #user-icon{
+
+}
+#user-icon{
     padding: 10px;
     margin: 5px;
-  }
-  #cart-icon{
+}
+#cart-icon{
     padding: 10px;
     margin: 5px;
     margin-right: 10px;
-  }
+}
 
-  .item-bar{
+.item-bar{
     list-style: none;
     display: flex;
     align-items: center;
     justify-content: center;
-   
 
-  }
-  .itemlist{
+
+}
+.itemlist{
     list-style: none;
     display: flex;
     padding: 20px;
-  
-  }
 
-  .footerlist{
+}
+
+.footerlist{
     list-style: none;
     display: flex;
     align-items: center;
     justify-content: center;
-   
-  }
-  .footeritem{
+
+}
+.footeritem{
     list-style: none;
     display: flex;
     padding: 20px;
-  
-  }
-  .flexcenter{
+
+}
+.flexcenter{
     position: relative;
     align-items: center;
     justify-content: center;
-  }
-  
-  html, body {
+}
+
+html, body {
     height: 100%; /*外層高度100%*/
     margin: 0;
-  }
-  footer{
+}
+footer{
     height: 50px; /*設定footer本身高度*/
-  }
-  .wrapper{
+}
+.wrapper{
     min-height: 100%;
-  }
+}
 
 /* banner */
 
@@ -96,14 +96,14 @@
             justify-content: center;
 }
 .flex {
-  -webkit-flex: initial;
-          flex: initial;
-  width: 15%;
-  min-width: 15%;
+	-webkit-flex: initial;
+    flex: initial;
+	width: 15%;
+	min-width: 15%;
 }
 
 .carousel-title{
-   text-align: center;
+	text-align: center;
 }
 
 
@@ -115,7 +115,6 @@
 }
 
 .betaSlider-nav-btn {
-    
     background-image: url(/素材圖片/icon/keyboard-left-arrow-button.png);
     background-position: center center;
     background-size: contain;
@@ -134,4 +133,17 @@
     height: 2px;
     background: #F3F3F3;
 
+}
+
+.picture{
+    width: 10%;
+    height: 10%;
+}
+
+.flo{
+    float: left;
+}
+
+.wid{
+    width: 100px;
 }

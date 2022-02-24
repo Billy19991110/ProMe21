@@ -2,7 +2,7 @@
 .icon-pic{
     width: 40px;
     height: 40px;
-   
+  
   }
   #user-icon{
     padding: 10px;
@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-   
+  
 
   }
   .itemlist{
@@ -35,7 +35,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-   
+  
   }
   .footeritem{
     list-style: none;
