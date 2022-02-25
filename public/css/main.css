@@ -1,0 +1,108 @@
+/* *{
+	border: 1px lightcoral solid;
+} */
+.textBlod {
+	font-weight: bold;
+}
+.divCenter {
+	display: -webkit-flex;
+	display: 		 flex;
+	-webkit-align-items: center;
+			align-items: center;
+	-webkit-justify-content: center;
+			justify-content: center;
+}
+.oddColor {
+	background-color: #F0F0F0;
+}
+.productMain {
+	width: 90vw;
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+}
+.flex6 {
+	-webkit-flex: 3;
+			flex: 3;
+}
+.flex7 {
+	-webkit-flex: 7;
+			flex: 7;
+}
+.flex8 {
+	-webkit-flex: 2;
+			flex: 2;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+}
+.flex8 > div {
+	margin: 0.5vh;
+}
+.flex9 {
+	-webkit-flex: 2;
+			flex: 2;
+}
+.flex10 {
+	-webkit-flex: 1;
+			flex: 1;
+}
+.productImg {
+	margin: 1vh;
+}
+.imgSize {
+	width: 18vh;
+	height: 18vh;
+}
+.product {
+	margin: 1vh;
+}
+.productName, .productInfor, .productPrice {
+	margin: 1vh;
+}
+.productPrice {
+	float: right;
+}
+.minusButton, .plusButton {
+	width: 3vw;
+}
+.minusButton > input, .plusButton > input {
+	width: 2vw;
+}
+.deleteButton, .deleteButton:hover {
+	text-decoration: none;
+	color: #CD0B0B;
+}
+.button {
+	float: right;
+	position: relative;
+	right: 5vw;
+}
+.checkoutButton, .refuseButton, .checkoutButton:hover, .refuseButton:hover {
+	margin: 0.5vh;
+	width: 10vw;
+	border-radius: 8px;
+	font-weight: bold;
+	text-decoration: none;
+
+}
+.checkoutButton {
+	background-color: #555B6E;
+	color: #FFF;
+	border: 1px #FFF solid;
+}
+.checkoutButton:hover {
+	background-color: #FFF;
+	color: #555B6E;
+	border: 1px #555B6E solid;
+}
+.refuseButton {
+	background-color: #FFF;
+	color: #555B6E;		
+	border: 1px #555B6E solid;
+}
+.refuseButton:hover {
+	background-color: #555B6E;
+	color: #FFF;		
+	border: 1px #FFF solid;
+}

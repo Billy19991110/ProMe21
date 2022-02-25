@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<link rel="stylesheet" href="/icon/icofont/icofont.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+	<title>Document</title>
+</head>
+<body>
+	<header></header>
+	<main>
+		<% for (let Item of product) { %>
+		<div class="divCenter oneProduct">
+			<div class="productMain">
+				<div class="productImg flex6 divCenter">
+					<img class="imgSize" src="<%= Item.pictureSeat1 %>">
+				</div>
+				<div class="product flex7">
+					<div class="productName textBlod"><%= Item.productName %></div>
+					<div class="productPrice"><%= Item.productPrice %></div>
+				</div>
+				<div class="flex8">
+					<div class="minusButton divCenter"><input type="button" value="-"></div>
+					<div class="productAmount"><%= Item.productNUM %></div>
+					<div class="plusButton divCenter"><input type="button" value="+"></div>
+				</div>
+				<div class="flex9 divCenter"><%= Item.productPrice * Item.productNUM %></div>
+				<div class="flex10 divCenter"><a class="deleteButton"><i class="icofont-minus-circle"></i></a></div>
+			</div>
+		</div>
+		<% } %>
+		<div class="button">
+			<a href="test_2"><input class="checkoutButton" type="button" value="前往結帳"></a>
+			<br>
+			<a><input class="refuseButton" type="button" value="下次再買"></a>
+		</div>
+	</main>
+	<footer></footer>
+
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<script type="text/javascript" src="/js/main.js"></script>
+</body>
+</html>

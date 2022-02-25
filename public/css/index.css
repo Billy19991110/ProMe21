@@ -1,149 +1,220 @@
-/* 
-*{
-    border: 1px solid red;
+/* *{
+	border: 1px solid lightcoral;
 } */
-/* header  footer */
 
-
-.icon-pic{
-    width: 40px;
-    height: 40px;
-
-}
-#user-icon{
-    padding: 10px;
-    margin: 5px;
-}
-#cart-icon{
-    padding: 10px;
-    margin: 5px;
-    margin-right: 10px;
+/* 通用class */
+a {
+	font-size: large;
+	text-decoration: none;
+	font-family: 'Kaisei Tokumin', serif;
 }
 
-.item-bar{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-
-}
-.itemlist{
-    list-style: none;
-    display: flex;
-    padding: 20px;
-
+body {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
-.footerlist{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-.footeritem{
-    list-style: none;
-    display: flex;
-    padding: 20px;
-
-}
-.flexcenter{
-    position: relative;
-    align-items: center;
-    justify-content: center;
+.flexcenter {
+	position: relative;
+	align-items: center;
+	justify-content: center;
 }
 
-html, body {
-    height: 100%; /*外層高度100%*/
-    margin: 0;
+.divCenter {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
 }
-footer{
-    height: 50px; /*設定footer本身高度*/
+
+/* header */
+.header {
+	height: 80px;
+	width: 100%;
+	background-color: #545b6e;
+	padding: 20px;
 }
-.wrapper{
-    min-height: 100%;
+
+.floatL {
+	float: left;
+}
+
+.floatR {
+	float: right;
+}
+
+.icon-box {
+	padding: 10px;
+	margin: 5px;
+}
+
+.icon-pic {
+	width: 40px;
+	height: 40px;
+}
+
+.logo-pic {
+	width: 70px;
+	height: 70px;
+	margin-top: -15px;
+}
+
+.item-bar {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: -10px;
+}
+
+.item-bar ul {
+	z-index: 1;
+	/* 優先度 */
+	position: absolute;
+	list-style: none;
+	top: 100%;
+	min-width: 180px;
+	margin-top: -20px;
+	/* 隱藏次選單 */
+	display: none;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+/* 滑鼠滑入展開次選單 */
+.item-bar li:hover>ul {
+	display: block;
+	opacity: 1;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.item-bar ul li {
+	background-color: #545b6e;
+	box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.item-bar ul li:hover {
+	background-color: #89b0ae;
+}
+
+.itemlist {
+	list-style: none;
+	display: flex;
+	padding: 20px;
+}
+
+.itemlist a {
+	color: #faf9f9;
+}
+
+.itemlist a:hover {
+	color: #89b0ae;
+}
+
+/* footer */
+.footer {
+	height: 80px;
+	width: 100%;
+	background-color: #545b6e;
+	padding: 20px;
+}
+
+.footerlist {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: -1vh;
+}
+
+.footeritem {
+	margin: 20px;
+	margin-top: -10px;
+}
+
+.footeritem a {
+	color: #faf9f9;
+}
+
+.footeritem a:hover {
+	color: #89b0ae;
 }
 
 /* banner */
 
-.Flex-container-banner{
-    display: flex;
-    justify-content: center;
+.Flex-container-banner {
+	display: flex;
+	justify-content: center;
 }
+
 /* 商品輪播 */
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    padding: 10px;
-}
-
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
 .container {
-    padding: 2px 16px;
+	padding: 2px 16px;
 }
 
 .flex-container {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: center;
-            align-items: center;
-}
-.divCenter {
-    height: 50vh;
-    width: 70%;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: center;
-            align-items: center;
-    -webkit-justify-content: center;
-            justify-content: center;
-}
-.flex {
-	flex: 1;
+	height: 50vh;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
 }
 
-.carousel-title{
+.flex {
+	-webkit-flex: initial;
+	flex: initial;
+	width: 20%;
+	min-width: 20%;
+	padding: 5px;
+}
+
+.carousel-title {
 	text-align: center;
 }
 
-
-.carousel-control-next-icon{
-    background-color: black;
-}
-.carousel-control-prev-icon{
-    background-color: black;
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+	background-color: black;
 }
 
 .betaSlider-nav-btn {
-    background-image: url(/素材圖片/icon/keyboard-left-arrow-button.png);
-    background-position: center center;
-    background-size: contain;
-    border: none;
+	background-image: url(/icon/left-arrow.png);
+	background-position: center center;
+	background-size: contain;
+	border: none;
 }
 
 .betaSlider-nav-btn {
-    background-image: url(/素材圖片/icon/right-arrow.png);
-    background-position: center center;
-    background-size: contain;
-    border: none;
-}
-.indexline{
-    width: 100%;
-    margin: 29px 0;
-    height: 2px;
-    background: #F3F3F3;
-
+	background-image: url(/icon/right-arrow.png);
+	background-position: center center;
+	background-size: contain;
+	border: none;
 }
 
-.picture{
-    width: 10%;
-    height: 10%;
+.indexline {
+	width: 100%;
+	margin: 29px 0;
+	height: 2px;
+	background: #F3F3F3;
 }
 
-.flo{
-    float: left;
+.picture {
+	width: 100%;
+	height: 100%;
+}
+
+.picture>img {
+	width: 15vw;
+	height: 15vw;
+}
+
+.flo {
+	float: left;
 }
