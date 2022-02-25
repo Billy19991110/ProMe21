@@ -86,7 +86,7 @@ body {
 }
 
 /* 滑鼠滑入展開次選單 */
-.item-bar li:hover>ul {
+.item-bar li:hover > ul {
 	display: block;
 	opacity: 1;
 	-webkit-transition: opacity 0.3s;
@@ -98,9 +98,9 @@ body {
 	box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-.item-bar ul li:hover {
+/* .item-bar ul li:hover {
 	background-color: #89b0ae;
-}
+} */
 
 .itemlist {
 	list-style: none;
