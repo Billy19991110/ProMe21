@@ -1,0 +1,58 @@
+<!-- 日本專區 -->
+<section>
+			<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-title">
+					<span>日本專區</span>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<div class="flex-container">
+						<% for(let Japan of japan) { %>
+							<div class="flex">
+								<div class="picture divCenter">
+									<img src="<%= Japan.pictureSeat1 %>">
+								</div>
+								<div class="container">
+									<div>
+										<p><%= Japan.productName %></p>
+									</div>
+									<div>
+										<p>價格：<%= Japan.productPrice %>元</p>
+									</div>
+								</div>
+							</div>
+						<% } %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- 韓國專區 -->
+		<section>
+			<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-title">
+					<span>韓國專區</span>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<div class="flex-container">
+						<% for(let Korea of korea) { %>
+							<div class="flex">
+								<div class="picture divCenter">
+									<img src="<%= Korea.pictureSeat1 %>">
+								</div>
+								<div class="container">
+									<div>
+										<p><%= Korea.productName %></p>
+									</div>
+									<div>
+										<p>價格：<%= Korea.productPrice %>元</p>
+									</div>
+								</div>
+							</div>
+						<% } %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
