@@ -78,3 +78,9 @@ app.get('/car', function (req, res) {
             res.render('shopp.ejs', { result });
         })
 });
+
+////////
+
+app.get('/test', function (req, res) {
+    res.render('test.ejs');
+});

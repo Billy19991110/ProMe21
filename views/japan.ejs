@@ -72,77 +72,79 @@
 		</ol>
 	</div>
 
-	<div class="itembox">
-		<div class="item">1</div>
-		<div class="item">2</div>
-		<div class="item">3</div>
-		<div class="item">4</div>
-	</div>
+	<% for (let Japan of result) { %>
 
-	<div class="itembox">
-		<div class="item">5</div>
-		<div class="item">6</div>
-		<div class="item">7</div>
-		<div class="item">8</div>
-	</div>
-
-
-
-
-	<!-- 分頁按鈕 -->
-	<div aria-label="PageNavigationExample">
-		<ul class="pagination">
-			<li class="page-item">
-				<a class="page-link" href="#" aria-label="Previous">
-					<span aria-hidden="true">&laquo;</span>
-				</a>
-			</li>
-			<li class="page-item"><a class="page-link" href="#">1</a></li>
-			<li class="page-item"><a class="page-link" href="#">2</a></li>
-			<li class="page-item"><a class="page-link" href="#">3</a></li>
-			<li class="page-item">
-				<a class="page-link" href="#" aria-label="Next">
-					<span aria-hidden="true">&raquo;</span>
-				</a>
-			</li>
-		</ul>
-	</div>
-
-
-	<!-- footer -->
-
-	<footer>
-
-
-		<div class="container-fluid hidden-sm hidden-md hidden-xs" style="padding: 0;width:100%"></div>
-		<div class="flexcenter" style="background-color:#545b6e;height:80px;padding:20px;width: 100%;">
-			<div class="container-bar">
-				<div class="row">
-					<class="col-xs-12">
-						<div class="footerMain">
-							<ul class="footerlist">
-								<li class="footeritem">
-									<a href="">關於我們</a>
-								</li>
-								<li class="footeritem">
-									<a href="">聯絡我們</a>
-								</li>
-							</ul>
-
-
-
-						</div>
-				</div>
-			</div>
+		<div class="itembox">
+			<div class="item"><img src="<%= Japan.pictureSeat1 %>" alt=""></div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+			<div class="item">4</div>
 		</div>
 
+		<div class="itembox">
+			<div class="item">5</div>
+			<div class="item">6</div>
+			<div class="item">7</div>
+			<div class="item">8</div>
+		</div>
 
-	</footer>
+		<% } %>
 
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-		crossorigin="anonymous"></script>
+			<!-- 分頁按鈕 -->
+			<div aria-label="PageNavigationExample">
+				<ul class="pagination">
+					<li class="page-item">
+						<a class="page-link" href="#" aria-label="Previous">
+							<span aria-hidden="true">&laquo;</span>
+						</a>
+					</li>
+					<li class="page-item"><a class="page-link" href="#">1</a></li>
+					<li class="page-item"><a class="page-link" href="#">2</a></li>
+					<li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-item">
+						<a class="page-link" href="#" aria-label="Next">
+							<span aria-hidden="true">&raquo;</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+
+			<!-- footer -->
+
+			<footer>
+
+
+				<div class="container-fluid hidden-sm hidden-md hidden-xs" style="padding: 0;width:100%"></div>
+				<div class="flexcenter" style="background-color:#545b6e;height:80px;padding:20px;width: 100%;">
+					<div class="container-bar">
+						<div class="row">
+							<class="col-xs-12">
+								<div class="footerMain">
+									<ul class="footerlist">
+										<li class="footeritem">
+											<a href="">關於我們</a>
+										</li>
+										<li class="footeritem">
+											<a href="">聯絡我們</a>
+										</li>
+									</ul>
+
+
+
+								</div>
+						</div>
+					</div>
+				</div>
+
+
+			</footer>
+
+
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+				integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+				crossorigin="anonymous"></script>
 </body>
 
 </html>
