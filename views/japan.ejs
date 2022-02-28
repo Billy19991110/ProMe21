@@ -32,7 +32,9 @@
 <body>
 	<%- include("header.ejs") %>
 		<main>
-			日本分區
+			<% for (let Japan of result) { %>
+				<img src="<%= Japan.pictureSeat1 %>" alt="">
+			<% } %>
 		</main>
 	<%- include("footer.ejs") %>
 </body>

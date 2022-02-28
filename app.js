@@ -37,8 +37,19 @@ app.get('/', function (req, res) {
 })
 
 //////////////日本頁/////////////////
-app.get('/japan', function (req, res) {
-    conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1',
+app.get('/japan/page:NUM', function (req, res) {
+    let pageNum = req.params.NUM;
+    let start = 0, end = 8;
+    if (pageNum == undefined) {
+        pageNum = 1;
+        start = 0;
+        end = 8;
+    } else {
+        start = (pageNum - 1) * 8;
+        end = pageNum * 8;
+    }
+    conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1`, (SELECT COUNT(*) FROM `product`) AS COUNT FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 LIMIT ?,?',
+        [start, end],
         function (err, result) {
             res.render('japan.ejs', {
                 result
@@ -58,8 +69,9 @@ app.get('/korea', function (req, res) {
 
 //////////////指定商品頁/////////////////
 app.get('/product/:ID', function (req, res) {
-    var id = req.params.ID;
-    conn.query('SELECT * FROM `product`JOIN `picture` ON `product`.`productID` = `picture`.`productID`WHERE `product`.`productID` = ?', [`${id}`],
+    let id = req.params.ID;
+    conn.query('SELECT * FROM `product`JOIN `picture` ON `product`.`productID` = `picture`.`productID`WHERE `product`.`productID` = ?',
+        [`${id}`],
         function (err, result) {
             res.render('product.ejs', {
                 result

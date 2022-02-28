@@ -9,14 +9,14 @@
 						<div class="flex-container">
 						<% for(let Japan of japan) { %>
 							<div class="flex">
-								<div class="picture divCenter">
+								<div class="picture divCenter" onclick="location.href='http://localhost:3000/product/<%= Japan.productID %>'">
 									<img src="<%= Japan.pictureSeat1 %>">
 								</div>
 								<div class="container">
-									<div>
+									<div onclick="location.href='http://localhost:3000/product/<%= Japan.productID %>'">
 										<p><%= Japan.productName %></p>
 									</div>
-									<div>
+									<div onclick="location.href='http://localhost:3000/product/<%= Japan.productID %>'">
 										<p>價格：<%= Japan.productPrice %>元</p>
 									</div>
 								</div>
@@ -37,15 +37,15 @@
 					<div class="carousel-item active">
 						<div class="flex-container">
 						<% for(let Korea of korea) { %>
-							<div class="flex">
+							<div class="flex" onclick="KoreaLink(<%= Korea.productID %>)" >
 								<div class="picture divCenter">
 									<img src="<%= Korea.pictureSeat1 %>">
 								</div>
 								<div class="container">
-									<div>
+									<div onclick="KoreaLink(this.productID)" >
 										<p><%= Korea.productName %></p>
 									</div>
-									<div>
+									<div onclick="KoreaLink(this.productID)" >
 										<p>價格：<%= Korea.productPrice %>元</p>
 									</div>
 								</div>
