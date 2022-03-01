@@ -79,25 +79,6 @@ app.get('/product/:ID', function (req, res) {
 })
 
 //INSERT INTO `buy` (`byID`, `userID`, `productID`, `productNUM`) VALUES (NULL, '1', '1', '1');
-/////////////新增商品到購物車/////////////
-app.get('/shopp', function (req, res) {
-    var userID = 1;
-    var productID = 1;
-    conn.query('INSERT INTO `buy` (`byID`, `userID`, `productID`, `productNUM`) VALUES (NULL, ?,?,1)', [`${userID}`, `${productID}`],
-        function (err, field) {
-            if (err)
-                throw err;
-        })
-});
-
-app.get('/car', function (req, res) {
-    conn.query('SELECT * FROM `buy`',
-        function (err, result) {
-            res.render('shopp.ejs', {
-                result
-            });
-        })
-});
 
 app.get('/data', function (req, res) {
     conn.query('SELECT * FROM `buy` JOIN `picture` ON `buy`.`productID` = `picture`.`productID` JOIN `product` ON `buy`.`productID` = `product`.`productID`',
