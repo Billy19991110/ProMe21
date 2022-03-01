@@ -515,7 +515,7 @@ body {
 }
 
 .flex-container {
-	/* height: 50vh; */
+	height: 50vh;
 	display: -webkit-flex;
 	display: flex;
 	-webkit-align-items: center;
