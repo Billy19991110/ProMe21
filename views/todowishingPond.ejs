@@ -28,73 +28,73 @@
 body {
 	background-color: #FFF;
 }
- .card img{
-	 height: 300px;
- }
+.card img{
+	height: 300px;
+}
 .card-body{
-	 height: 200px;
-	 
-	 border-top: 2px solid #545b6e	}
-	 
-	 
+	height: 200px;
+	
+	border-top: 2px solid #545b6e	}
+	
+	
 .wish-card{
 	border: 3 solid #545b6e;
 	box-shadow: 10px 10px 5px #888888;
 
- }
+}
 
 
 
  /* ===== */
- 
+
  /* ===== */
 
-  
 
 
- </style>   
-     
+
+</style>   
+    
 </head>
 <body>
     <div class="wrapper">  
         <nav> 
             <header>
-             <div class="container-fluid hidden-sm hidden-md hidden-xs" style="padding: 0;width:100%"></div>
-              <div class="flexcenter" style="background-color:#545b6e;height:80px;padding:20px;width: 100%;">
+            <div class="container-fluid hidden-sm hidden-md hidden-xs" style="padding: 0;width:100%"></div>
+            <div class="flexcenter" style="background-color:#545b6e;height:80px;padding:20px;width: 100%;">
                 <div class="container-bar" >
-                  <div class="row">
+                <div class="row">
                     <div class="col-xs-12" >
-                      <div style="float: left;"><a href=""><img src="/素材圖片/LOGO/LOGO-white.png" alt="" class="logo-pic"></a></div>
-       
-                      <div style="float: right;">
+                    <div style="float: left;"><a href=""><img src="/素材圖片/LOGO/LOGO-white.png" alt="" class="logo-pic"></a></div>
+    
+                    <div style="float: right;">
                         <a href="" id="user-icon" class="icon-box"><img src="/素材圖片/icon/user  (1).png" class="icon-pic"></a>
                         <a href="" id="cart-icon" class="icon-box"><img src="/素材圖片/icon/cart.png"  class="icon-pic"></a>
-                     </div>
-       
-                     <div class="item-box" style="margin-top: -10px;" >
-                       <ul class="item-bar">
-                         <li class="itemlist"><a href="" id="itemlist-text"><p>日本專區</p></a>
-                          <ul>
+                    </div>
+    
+                    <div class="item-box" style="margin-top: -10px;" >
+                    <ul class="item-bar">
+                        <li class="itemlist"><a href="" id="itemlist-text"><p>日本專區</p></a>
+                        <ul>
                             <li><a href="">偶像專區</a></li>
                             <li><a href="">動漫專區</a></li>
-                          </ul>
+                        </ul>
                         </li>
-                           
-                         <li class="itemlist" ><a href="" id="itemlist-text"><p>韓國專區</p></a></li>
-                         
-                         <li class="itemlist" ><a href="" id="itemlist-text"><p>許願清單</p></a></li>
-                       </ul>
-       
-                     </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </header>
-          </nav>
-       
+                        
+                        <li class="itemlist" ><a href="" id="itemlist-text"><p>韓國專區</p></a></li>
+                        
+                        <li class="itemlist" ><a href="" id="itemlist-text"><p>許願清單</p></a></li>
+                    </ul>
     
-      <main> 
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </header>
+        </nav>
+    
+    
+    <main> 
         
         
 
@@ -102,20 +102,20 @@ body {
         
     <div class="container  container-wish">
 		<div class="row" id="myoption">
-      <% for ( var result of result ) { %>
+    <% for ( var result of result ) { %>
 		<div class="col-lg-4 mb-4">
 			<a href="" style="text-decoration: none; color: black;" >
 			<div class="card wish-card">
-			  <img src="http://localhost:5000/images/upload_images/<%= result.image %>" alt="" class="card-img-top">
-			  <div class="card-body">
+			<img src="http://localhost:5000/images/upload_images/<%= result.image %>" alt="" class="card-img-top">
+			<div class="card-body">
 				<h5 class="card-title"><%= result.commodity_name %></h5>
 				<p class="card-text"><%= result.Product_Description %> </p>
-			  </div>
-			 </div>
+			</div>
+			</div>
 			</a>
 			</div>
-   	   
-     <% } %>
+
+    <% } %>
 
     </div>
 <!-- ====== 匯入許願池項目 ===== -->
@@ -142,31 +142,31 @@ body {
     </main>
 </div>  
 <footer class="footer">
- 
+
 
     <div class="container-fluid hidden-sm hidden-md hidden-xs" style="padding: 0;width:100%"></div>
     <div class="flexcenter" style="background-color:#545b6e;height:80px;padding:20px;width: 100%;">
-      <div class="container-bar">
+    <div class="container-bar">
         <div class="row">
-          <class="col-xs-12"  >
-          <div class="footerMain"> 
-              <ul class="footerlist">
-                  <li class="footeritem">
-                      <a href=""><p>關於我們</p></a>
-                  </li>
-                  <li class="footeritem">
-                      <a href=""><p>聯絡我們</p></a>
-                  </li>
-              </ul>
-           
+        <class="col-xs-12"  >
+        <div class="footerMain"> 
+            <ul class="footerlist">
+                <li class="footeritem">
+                    <a href=""><p>關於我們</p></a>
+                </li>
+                <li class="footeritem">
+                    <a href=""><p>聯絡我們</p></a>
+                </li>
+            </ul>
+        
 
-           
-          </div>
+        
         </div>
-      </div>
+        </div>
+    </div>
     </div>
 
- 
+
 </footer>
 
 </body>
