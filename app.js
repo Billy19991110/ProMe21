@@ -40,15 +40,23 @@ app.get('/', function (req, res) {
 app.get('/japan/page:NUM', function (req, res) {
     let pageNum = req.params.NUM;
     let start, end;
-    if (pageNum == undefined) {
+    console.log(pageNum);
+    
+    if (pageNum == null) {
         pageNum = 1;
         start = 0;
         end = 12;
     } else {
-        start = (pageNum - 1) * 12;
+        start = (pageNum - 1) * 12 ;
         end = 12;
     }
-    conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1`, (SELECT COUNT(*) FROM `product`) AS COUNT FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 LIMIT ?,?', [start, end],
+    console.log(start);
+    console.log(end);
+
+
+    
+    conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1`, (SELECT COUNT(*) FROM `product`) AS COUNT FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 LIMIT ?,?',
+        [start, end],
         function (err, result) {
             res.render('japan.ejs', {
                 result
@@ -56,9 +64,27 @@ app.get('/japan/page:NUM', function (req, res) {
         });
 })
 
+
 //////////////韓國頁/////////////////
-app.get('/korea', function (req, res) {
-    conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 2',
+app.get('/korea/page:NUM', function (req, res) {
+
+    let pageNum = req.params.NUM;
+    let start, end;
+    console.log(pageNum);
+    
+    if (pageNum == null) {
+        pageNum = 1;
+        start = 0;
+        end = 12;
+    } else {
+        start = (pageNum - 1) * 12 ;
+        end = 12;
+    }
+    console.log(start);
+    console.log(end);
+
+    conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1`, (SELECT COUNT(*) FROM `product`) AS COUNT FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 2 LIMIT ?,?',
+        [start, end],
         function (err, result) {
             res.render('korea.ejs', {
                 result

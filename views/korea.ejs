@@ -32,14 +32,49 @@
 </head>
 
 <body>
-	<%- include("header.ejs") %>
-		<main>
-			韓國分區
-			<% for (let Korea of result) { %>
-				<img src="<%= Korea.pictureSeat1 %>" alt="">
-			<% } %>
-		</main>
-	<%- include("footer.ejs") %>
+	<main>
+		<%- include("header.ejs") %>
+		<div class="itemArea">
+			<div class="itemList">
+				<div class="container">
+					<div class="row col-md-3 flex-container">
+						<% for (let Korea of result) { %>
+							<div class="flex transformed itemAct">
+								<div class="divCenter" >
+									<img src="<%= Korea.pictureSeat1 %>" alt="">
+								</div>
+
+								<div class="itemText">
+									<p><%= Korea.productName %></p>
+									<p>價格：<%= Korea.productPrice %>元</p>
+								</div>
+							</div>
+
+						<% } %>
+					</div>
+				</div>
+			</div>
+
+			<div aria-label="Page navigation example ">
+				<ul class="pagination divCenter">
+				  <li class="page-item">
+					<a class="page-link" href="#" aria-label="Previous">
+					  <span aria-hidden="true">&laquo;</span>
+					</a>
+				  </li>
+				  <li class="page-item"><a class="page-link" href="http://localhost:3000/korea/page1">1</a></li>
+				  <li class="page-item"><a class="page-link" href="http://localhost:3000/korea/page2">2</a></li>
+				  <li class="page-item"><a class="page-link" href="http://localhost:3000/korea/page3">3</a></li>
+				  <li class="page-item">
+					<a class="page-link" href="#" aria-label="Next">
+					  <span aria-hidden="true">&raquo;</span>
+					</a>
+				  </li>
+				</ul>
+			</div>
+		</div>
+		<%- include("footer.ejs") %>
+	</main>
 </body>
 
 </html>
