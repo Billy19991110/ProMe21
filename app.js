@@ -17,7 +17,7 @@ var conn = mysql.createConnection({
     host: 'localhost',
     port: 3306,
     user: 'root',
-    password: 'root'
+    password: ''
 
 });
 
@@ -50,8 +50,6 @@ app.get('/japan/page:NUM', function (req, res) {
         start = (pageNum - 1) * 12 ;
         end = 12;
     }
-    console.log(start);
-    console.log(end);
 
 
     
@@ -173,7 +171,7 @@ var
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'root',
+    password: '',
     database: 'test_v1'
 });
 
