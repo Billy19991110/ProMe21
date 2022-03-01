@@ -21,14 +21,14 @@ var conn = mysql.createConnection({
 
 });
 
-conn.connect(function(err) {
+conn.connect(function (err) {
     console.log(err);
 })
 
 ////////////////網頁首頁//////////////////
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
     conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 ORDER BY rand() LIMIT 4 ; SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 2 ORDER BY rand() LIMIT 4 ; ',
-        function(err, result) {
+        function (err, result) {
             res.render('index.ejs', {
                 japan: result[0],
                 korea: result[1]
@@ -37,14 +37,10 @@ app.get('/', function(req, res) {
 })
 
 //////////////日本頁/////////////////
-app.get('/japan/page:NUM', function(req, res) {
+app.get('/japan/page:NUM', function (req, res) {
     let pageNum = req.params.NUM;
-<<<<<<< HEAD
     let start, end;
-=======
-    let start = 0,
-        end = 8;
->>>>>>> d139e3a010f850375961429f4f63fdd3f05cd5f1
+    let start = 0, end = 8;
     if (pageNum == undefined) {
         pageNum = 1;
         start = 0;
@@ -54,7 +50,7 @@ app.get('/japan/page:NUM', function(req, res) {
         end = 12;
     }
     conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1`, (SELECT COUNT(*) FROM `product`) AS COUNT FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 LIMIT ?,?', [start, end],
-        function(err, result) {
+        function (err, result) {
             res.render('japan.ejs', {
                 result
             });
@@ -62,9 +58,9 @@ app.get('/japan/page:NUM', function(req, res) {
 })
 
 //////////////韓國頁/////////////////
-app.get('/korea', function(req, res) {
+app.get('/korea', function (req, res) {
     conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 2',
-        function(err, result) {
+        function (err, result) {
             res.render('korea.ejs', {
                 result
             });
@@ -72,10 +68,10 @@ app.get('/korea', function(req, res) {
 })
 
 //////////////指定商品頁/////////////////
-app.get('/product/:ID', function(req, res) {
+app.get('/product/:ID', function (req, res) {
     let id = req.params.ID;
     conn.query('SELECT * FROM `product`JOIN `picture` ON `product`.`productID` = `picture`.`productID`WHERE `product`.`productID` = ?', [`${id}`],
-        function(err, result) {
+        function (err, result) {
             res.render('product.ejs', {
                 result
             });
@@ -84,53 +80,53 @@ app.get('/product/:ID', function(req, res) {
 
 //INSERT INTO `buy` (`byID`, `userID`, `productID`, `productNUM`) VALUES (NULL, '1', '1', '1');
 /////////////新增商品到購物車/////////////
-app.get('/shopp', function(req, res) {
+app.get('/shopp', function (req, res) {
     var userID = 1;
     var productID = 1;
     conn.query('INSERT INTO `buy` (`byID`, `userID`, `productID`, `productNUM`) VALUES (NULL, ?,?,1)', [`${userID}`, `${productID}`],
-        function(err, field) {
+        function (err, field) {
             if (err)
                 throw err;
         })
 });
 
-app.get('/car', function(req, res) {
+app.get('/car', function (req, res) {
     conn.query('SELECT * FROM `buy`',
-        function(err, result) {
+        function (err, result) {
             res.render('shopp.ejs', {
                 result
             });
         })
 });
 
-app.get('/data', function(req, res) {
+app.get('/data', function (req, res) {
     conn.query('SELECT * FROM `buy` JOIN `picture` ON `buy`.`productID` = `picture`.`productID` JOIN `product` ON `buy`.`productID` = `product`.`productID`',
-        function(err, result) {
+        function (err, result) {
             var jsonString = JSON.stringify(result);
             res.send(jsonString);
         });
 });
-app.get("/cart", function(req, res) {
-    conn.query('SELECT * FROM `buy` JOIN `picture` ON `buy`.`productID` = `picture`.`productID` JOIN `product` ON `buy`.`productID` = `product`.`productID`', [], function(err, result) {
+app.get("/cart", function (req, res) {
+    conn.query('SELECT * FROM `buy` JOIN `picture` ON `buy`.`productID` = `picture`.`productID` JOIN `product` ON `buy`.`productID` = `product`.`productID`', [], function (err, result) {
         res.render("cart.ejs", {
             product: result
         });
     });
 });
-app.put("/cart", function(req, res) {
+app.put("/cart", function (req, res) {
     conn.query("update buy set productNUM = ? where byID = ?", [req.body.productNUM, req.body.byID],
-        function(err, rows) {
+        function (err, rows) {
             res.send(JSON.stringify(req.body));
         }
     );
 });
-app.delete("/cart", function(req, res) {
+app.delete("/cart", function (req, res) {
     conn.query("delete from buy where byID = ?", [req.body.byID],
-        function(err, result) {
+        function (err, result) {
             res.send(JSON.stringify(req.body));
         }
     );
 });
-app.get("/checkout", function(req, res) {
+app.get("/checkout", function (req, res) {
     res.render("checkout.ejs");
 });
