@@ -1,6 +1,7 @@
 /* *{
 	border: 1px lightcoral solid;
 } */
+
 .textBlod {
 	font-weight: bold;
 }
@@ -12,6 +13,8 @@
 	-webkit-justify-content: center;
 			justify-content: center;
 }
+
+/* 商品頁CSS */
 .oddColor {
 	background-color: #F0F0F0;
 }
@@ -105,4 +108,22 @@
 	background-color: #555B6E;
 	color: #FFF;		
 	border: 1px #FFF solid;
+}
+
+/* 結帳頁CSS */
+.checkout {
+	display: flex;
+	height: calc(100vh - 160px);
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.checkout > img {
+	height: 180px;
+	width: 198px;
+	margin: 20px;
+}
+.checkout > div {
+	font-weight: bold;
+	color: #555B6E;
 }
