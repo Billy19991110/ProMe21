@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+  <!-- ===== header ===== -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/login">登入</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/register">註冊</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Wish">許願單</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/myform">客服表單</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+  <!-- ===== header ===== -->
+
+      <div class='container my-5'>
+        <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <h5 class="card-title">客服回饋表單 </h5>
+              <form onsubmit="return false" id="form">
+                <div class="form-group">
+                  <label for="email">Email </label>
+                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+               
+                <div class="form-group row">
+                  <label for="problemOptions" class="col-4 col-form-label">問題種類</label> 
+                  <div class="col-12">
+                    <select id="problemOptions" name="problemOptions" class="custom-select">
+                      <option value="瑕疵">瑕疵</option>
+                      <option value="物流">物流</option>
+                      <option value="貨品錯誤">貨品錯誤</option>
+                      <option value="其他">其他</option>
+                    </select>
+                  </div>
+                </div> 
+               
+                <div class="form-group">
+                  <label for="productName">商品名稱</label>
+                  <input type="productName" class="form-control" id="productName" autocapitalize="off" required placeholder="商品名稱 ">
+                </div>
+                <div class="form-group">
+                  <label for="problem">詳細原因</label>
+                  <input type="problem" class="form-control" id="problem" autocapitalize="off" required placeholder="詳細原因">
+                </div>
+                <div  style="display:none ;" class="alert alert-success" role="alert"  id="success"></div>
+                <div  style="display:none ;" class="alert alert-danger" role="alert"  id="error"></div>
+                <button type="submit" class="btn btn-primary">送出</button>
+              </form>
+            </div>
+          </div>
+      </div>
+      <script src="./js/myform.js"></script>
+    </body>
+
+</html>
+
+
+
+
+
+<!-- ===== ok select =====
+
+
+
+  <div class='container my-5'>
+        <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <h5 class="card-title">客服回饋表單 </h5>
+              <form onsubmit="return false" id="form">
+                <div class="form-group">
+                  <label for="email">Email </label>
+                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="productName">productName</label>
+                  <input type="productName" class="form-control" id="productName" autocapitalize="off" required placeholder="productName">
+                </div>
+                <div class="form-group">
+                  <label for="problem">problem</label>
+                  <input type="problem" class="form-control" id="problem" autocapitalize="off" required placeholder="problem">
+                </div>
+                <div  style="display:none ;" class="alert alert-success" role="alert"  id="success"></div>
+                <div  style="display:none ;" class="alert alert-danger" role="alert"  id="error"></div>
+                <button type="submit" class="btn btn-primary">送出</button>
+              </form>
+            </div>
+          </div>
+      </div>
+
+
+
+
+
+-->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">HOME</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/register">register</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+      <div class='container my-5'>
+        <div class="card" style="width: 100%;">
+            <div class="card-body">
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+                
+                <form onsubmit="return false" id="form">
+                  <div class="group">
+                    <div class="form-group">
+                      <label for="email">Email </label>
+                      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="productName">商品名稱</label>
+                    <input type="productName" class="form-control" id="productName" autocapitalize="off" required placeholder="商品名稱">
+                  </div>
+                  <div class="form-group">
+                    <label for="problem">問題敘述</label>
+                    <input type="problem" class="form-control" id="problem" autocapitalize="off" required placeholder="問題敘述">
+                  </div>
+                  <div class="form-group row">
+                    <div class="offset-4 col-8">
+                      <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </div>
+                </form>
+              </form>
+            </div>
+          </div>
+      </div>
+      <script src="js/myform.js"></script>
+</body>
+</html> -->

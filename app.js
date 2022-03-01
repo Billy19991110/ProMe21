@@ -39,14 +39,14 @@ app.get('/', function (req, res) {
 //////////////日本頁/////////////////
 app.get('/japan/page:NUM', function (req, res) {
     let pageNum = req.params.NUM;
-    let start = 0, end = 8;
+    let start, end;
     if (pageNum == undefined) {
         pageNum = 1;
         start = 0;
-        end = 8;
+        end = 12;
     } else {
-        start = (pageNum - 1) * 8;
-        end = pageNum * 8;
+        start = (pageNum - 1) * 12;
+        end = 12;
     }
     conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1`, (SELECT COUNT(*) FROM `product`) AS COUNT FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 LIMIT ?,?',
         [start, end],

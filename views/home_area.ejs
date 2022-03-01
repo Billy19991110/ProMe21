@@ -37,15 +37,15 @@
 					<div class="carousel-item active">
 						<div class="flex-container">
 						<% for(let Korea of korea) { %>
-							<div class="flex" onclick="KoreaLink(<%= Korea.productID %>)" >
+							<div class="flex" onclick="location.href='http://localhost:3000/product/<%= Korea.productID %>'" >
 								<div class="picture divCenter">
 									<img src="<%= Korea.pictureSeat1 %>">
 								</div>
 								<div class="container">
-									<div onclick="KoreaLink(this.productID)" >
+									<div onclick="location.href='http://localhost:3000/product/<%= Korea.productID %>'" >
 										<p><%= Korea.productName %></p>
 									</div>
-									<div onclick="KoreaLink(this.productID)" >
+									<div onclick="location.href='http://localhost:3000/product/<%= Korea.productID %>'" >
 										<p>價格：<%= Korea.productPrice %>元</p>
 									</div>
 								</div>
