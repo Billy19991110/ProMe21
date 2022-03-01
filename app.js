@@ -21,14 +21,14 @@ var conn = mysql.createConnection({
 
 });
 
-conn.connect(function (err) {
+conn.connect(function(err) {
     console.log(err);
 })
 
 ////////////////網頁首頁//////////////////
-app.get('/', function (req, res) {
+app.get('/', function(req, res) {
     conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 ORDER BY rand() LIMIT 4 ; SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 2 ORDER BY rand() LIMIT 4 ; ',
-        function (err, result) {
+        function(err, result) {
             res.render('index.ejs', {
                 japan: result[0],
                 korea: result[1]
@@ -37,27 +37,39 @@ app.get('/', function (req, res) {
 })
 
 //////////////日本頁/////////////////
-app.get('/japan/page:NUM', function (req, res) {
+app.get('/japan/page:NUM', function(req, res) {
     let pageNum = req.params.NUM;
     let start, end;
-    console.log(pageNum);
-    
     if (pageNum == null) {
         pageNum = 1;
         start = 0;
         end = 12;
     } else {
-        start = (pageNum - 1) * 12 ;
+        start = (pageNum - 1) * 12;
         end = 12;
     }
+<<<<<<< HEAD
+
+    conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1`, (SELECT COUNT(*) FROM `product`) AS COUNT FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 LIMIT ?,?', [start, end],
+        function(err, result) {
+=======
+<<<<<<< HEAD
+=======
     console.log(start);
     console.log(end);
+>>>>>>> 5917bc08e44c441615dcd128d4a94406f11fd311
 
 
     
     conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1`, (SELECT COUNT(*) FROM `product`) AS COUNT FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 LIMIT ?,?',
         [start, end],
         function (err, result) {
+<<<<<<< HEAD
+    conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1`, (SELECT COUNT(*) FROM `product`) AS COUNT FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 LIMIT ?,?', [start, end],
+        function(err, result) {
+=======
+>>>>>>> 5917bc08e44c441615dcd128d4a94406f11fd311
+>>>>>>> 4c435da816e6e9fa4580598982bce577e241b6f5
             res.render('japan.ejs', {
                 result
             });
@@ -66,26 +78,20 @@ app.get('/japan/page:NUM', function (req, res) {
 
 
 //////////////韓國頁/////////////////
-app.get('/korea/page:NUM', function (req, res) {
+app.get('/korea/page:NUM', function(req, res) {
 
     let pageNum = req.params.NUM;
     let start, end;
-    console.log(pageNum);
-    
     if (pageNum == null) {
         pageNum = 1;
         start = 0;
         end = 12;
     } else {
-        start = (pageNum - 1) * 12 ;
+        start = (pageNum - 1) * 12;
         end = 12;
     }
-    console.log(start);
-    console.log(end);
-
-    conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1`, (SELECT COUNT(*) FROM `product`) AS COUNT FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 2 LIMIT ?,?',
-        [start, end],
-        function (err, result) {
+    conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1`, (SELECT COUNT(*) FROM `product`) AS COUNT FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 2 LIMIT ?,?', [start, end],
+        function(err, result) {
             res.render('korea.ejs', {
                 result
             });
@@ -93,10 +99,10 @@ app.get('/korea/page:NUM', function (req, res) {
 })
 
 //////////////指定商品頁/////////////////
-app.get('/product/:ID', function (req, res) {
+app.get('/product/:ID', function(req, res) {
     let id = req.params.ID;
     conn.query('SELECT * FROM `product`JOIN `picture` ON `product`.`productID` = `picture`.`productID`WHERE `product`.`productID` = ?', [`${id}`],
-        function (err, result) {
+        function(err, result) {
             res.render('product.ejs', {
                 result
             });
@@ -105,38 +111,37 @@ app.get('/product/:ID', function (req, res) {
 
 //INSERT INTO `buy` (`byID`, `userID`, `productID`, `productNUM`) VALUES (NULL, '1', '1', '1');
 
-app.get('/data', function (req, res) {
+app.get('/data', function(req, res) {
     conn.query('SELECT * FROM `buy` JOIN `picture` ON `buy`.`productID` = `picture`.`productID` JOIN `product` ON `buy`.`productID` = `product`.`productID`',
-        function (err, result) {
+        function(err, result) {
             var jsonString = JSON.stringify(result);
             res.send(jsonString);
         });
 });
-app.get("/cart", function (req, res) {
-    conn.query('SELECT * FROM `buy` JOIN `picture` ON `buy`.`productID` = `picture`.`productID` JOIN `product` ON `buy`.`productID` = `product`.`productID`', [], function (err, result) {
+app.get("/cart", function(req, res) {
+    conn.query('SELECT * FROM `buy` JOIN `picture` ON `buy`.`productID` = `picture`.`productID` JOIN `product` ON `buy`.`productID` = `product`.`productID`', [], function(err, result) {
         res.render("cart.ejs", {
             product: result
         });
     });
 });
-app.put("/cart", function (req, res) {
+app.put("/cart", function(req, res) {
     conn.query("update buy set productNUM = ? where byID = ?", [req.body.productNUM, req.body.byID],
-        function (err, rows) {
+        function(err, rows) {
             res.send(JSON.stringify(req.body));
         }
     );
 });
-app.delete("/cart", function (req, res) {
+app.delete("/cart", function(req, res) {
     conn.query("delete from buy where byID = ?", [req.body.byID],
-        function (err, result) {
+        function(err, result) {
             res.send(JSON.stringify(req.body));
         }
     );
 });
-app.get("/checkout", function (req, res) {
+app.get("/checkout", function(req, res) {
     res.render("checkout.ejs");
 });
-
 
 
 
@@ -162,9 +167,9 @@ db.connect((err) => {
 })
 // ===== 許願專區=====
 var
-    routes = require('./routes')
-    , http = require('http')
-    , path = require('path'),
+    routes = require('./routes'),
+    http = require('http'),
+    path = require('path'),
     busboy = require("then-busboy"),
     fileUpload = require('express-fileupload'),
     mysql = require('mysql'),
@@ -185,20 +190,24 @@ global.db = connection;
 app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileUpload());
 
 
-app.get('/wishList', routes.wishList);//call for main index page
-app.post('/', routes.wishList);//call for signup post 
+app.get('/wishList', routes.wishList); //call for main index page
+app.post('/', routes.wishList); //call for signup post 
 //Middleware
 
-app.get('/todowishingPond', function (req, res) {
+app.get('/todowishingPond', function(req, res) {
     connection.query('SELECT * FROM `users_image`',
-        function (err, result) {
-            res.render('todowishingPond.ejs', { result });
+        function(err, result) {
+            res.render('todowishingPond.ejs', {
+                result
+            });
         })
 });
 // =====demo=====
@@ -206,7 +215,6 @@ app.get('/todowishingPond', function (req, res) {
 
 app.use('/', require('./routes/pages'))
 app.use('/api', require('./controllers/auth'));
-
 
 
 

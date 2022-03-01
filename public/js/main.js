@@ -2,7 +2,6 @@ $(function() {
 
 	$.get("/data", function(e) {
 		buyList = JSON.parse(e);
-		// console.log(buyList);
 		refreshNewsUI();
 	});
 
@@ -40,7 +39,6 @@ $(function() {
 					.then(function(e) {
 						$.get("/data", function(e) {
 							buyList = JSON.parse(e);
-							// console.log(buyList);
 							refreshNewsUI();
 						});
 					});

@@ -1,58 +1,54 @@
 <!-- 日本專區 -->
 <section>
-			<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-				<div class="carousel-title">
-					<span>日本專區</span>
-				</div>
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<div class="flex-container">
-						<% for(let Japan of japan) { %>
-							<div class="flex">
-								<div class="picture divCenter" onclick="location.href='http://localhost:3000/product/<%= Japan.productID %>'">
-									<img src="<%= Japan.pictureSeat1 %>">
-								</div>
-								<div class="container">
-									<div onclick="location.href='http://localhost:3000/product/<%= Japan.productID %>'">
-										<p><%= Japan.productName %></p>
-									</div>
-									<div onclick="location.href='http://localhost:3000/product/<%= Japan.productID %>'">
-										<p>價格：<%= Japan.productPrice %>元</p>
-									</div>
-								</div>
-							</div>
-						<% } %>
+	<div class="areaTitle">
+		<span>日本專區</span>
+	</div>
+	<div class="itemList">
+		<div class="container">
+			<div class="row col-md-3 flex-container">
+				<% for (let Japan of japan) { %>
+					<div class="flex transformed itemAct">
+						<div class="divCenter" onclick="location.href='http://localhost:3000/product/<%= Japan.productID %>'">
+							<img src="<%= Japan.pictureSeat1 %>" alt="">
 						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- 韓國專區 -->
-		<section>
-			<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-				<div class="carousel-title">
-					<span>韓國專區</span>
-				</div>
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<div class="flex-container">
-						<% for(let Korea of korea) { %>
-							<div class="flex" onclick="location.href='http://localhost:3000/product/<%= Korea.productID %>'" >
-								<div class="picture divCenter">
-									<img src="<%= Korea.pictureSeat1 %>">
-								</div>
-								<div class="container">
-									<div onclick="location.href='http://localhost:3000/product/<%= Korea.productID %>'" >
-										<p><%= Korea.productName %></p>
-									</div>
-									<div onclick="location.href='http://localhost:3000/product/<%= Korea.productID %>'" >
-										<p>價格：<%= Korea.productPrice %>元</p>
-									</div>
-								</div>
+						<div class="itemText">
+							<div onclick="location.href='http://localhost:3000/product/<%= Japan.productID %>'">
+								<p><%= Japan.productName %></p>
 							</div>
-						<% } %>
-						</div>
+							<div onclick="location.href='http://localhost:3000/product/<%= Japan.productID %>'">
+								<p>價格：<%= Japan.productPrice %>元</p>
+							</div>
+						</div>	
 					</div>
-				</div>
-			</div>
-		</section>
+				<% } %>
+			</div>	
+		</div>	
+	</div>
+</section>
+<!-- 韓國專區 -->
+<section>
+	<div class="areaTitle">
+		<span>韓國專區</span>
+	</div>
+	<div class="itemList">
+		<div class="container">
+			<div class="row col-md-3 flex-container">
+				<% for (let Korea of korea) { %>
+					<div class="flex transformed itemAct">
+						<div class="divCenter" onclick="location.href='http://localhost:3000/product/<%= Korea.productID %>'">
+							<img src="<%= Korea.pictureSeat1 %>" alt="">
+						</div>
+						<div class="itemText">
+							<div onclick="location.href='http://localhost:3000/product/<%= Korea.productID %>'">
+								<p><%= Korea.productName %></p>
+							</div>
+							<div onclick="location.href='http://localhost:3000/product/<%= Korea.productID %>'">
+								<p>價格：<%= Korea.productPrice %>元</p>
+							</div>
+						</div>	
+					</div>
+				<% } %>
+			</div>	
+		</div>	
+	</div>
+</section>
