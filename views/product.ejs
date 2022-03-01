@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/product.css">
+    <title>產品介紹</title>
+<style>
+.pic img{transform:scale(1,1);transition: all 1s ease-out;}
+.pic img:hover{transform:scale(1.2,1.2);}
+</style>
+</head>
+
+
+
+<body>
+    <% for (var Item of result) { %>
+    <!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-5">
+            <a class="navbar-brand" href="#!"> title demo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+            </div>
+        </div>
+    </nav>
+    <!-- Page Content-->
+    <div class="container px-4 px-lg-5">
+        <!-- Heading Row-->
+        <div class="row gx-4 gx-lg-5 align-items-center my-5">
+            <div class="col-lg-7 pic"><img  style="width: 75%;"  class=" rounded "  src=" <%= Item.pictureSeat1 %>  " alt="" alt="..." /></div>
+            <div class="col-lg-5">
+                <h1 class="font-weight-light">slogan</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio mollitia error fugit at eius quisquam illum explicabo ipsa doloremque praesentium asperiores nam deserunt laudantium ducimus, doloribus, porro ratione, voluptates architecto!</p>
+                <div >
+                    <select id="myoption" style="width: 25%; float: left; margin-right: 30px; margin-top: 5px; padding-bottom: 5px;" >
+                       <script>
+                        for (var i = 1; i < 99; i++) {
+                            // for 迴圈
+                            var content = "<option>" + i + "</option>";
+                            // console.log(content);
+                            document.getElementById("myoption").innerHTML +=content
+                        }
+                        </script>
+                        <!-- <option >請選取數量</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>  -->
+                    </select>
+                </div>
+                <a class="btn btn-primary" href="/shopp">加入購物車</a>
+            </div>
+        </div>
+        <!-- Call to Action-->
+        <div class="card text-white bg-light my-5 py-4 text-center">
+            <div class="card-body"><p class="text-info m-0">商品規格</p></div>
+        </div>
+        <!-- Content Row-->
+        <div class="row gx-4 gx-lg-5">
+            <div class="col-md-12 mb-5">
+                <div class="card" style="width: 100%;">
+                    <img class="card-img-top" src=" <%= Item.pictureSeat1 %> " alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit dolorem explicabo delectus illo blanditiis facilis necessitatibus rem, quisquam natus eos! Fuga id eius voluptate beatae itaque nihil ut vitae velit.</p>
+                    </div>
+                    </div>
+            </div>
+            <div class="col-md-12 mb-5">
+                <div class="card" style="width: 100%;">
+                    <img class="card-img-top" src=" <%= Item.pictureSeat2 %> " alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit dolorem explicabo delectus illo blanditiis facilis necessitatibus rem, quisquam natus eos! Fuga id eius voluptate beatae itaque nihil ut vitae velit.</p>
+                    </div>
+                    </div>
+            </div>
+            <div class="col-md-12 mb-5">
+                <div class="card" style="width: 100%;">
+                    <img class="card-img-top" src=" <%= Item.pictureSeat3 %> " alt="Card image cap">
+                    <div class="card-body">
+                      <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit dolorem explicabo delectus illo blanditiis facilis necessitatibus rem, quisquam natus eos! Fuga id eius voluptate beatae itaque nihil ut vitae velit.</p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">footer demo</p></div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <% } %>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
