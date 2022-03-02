@@ -40,10 +40,6 @@ app.get('/', function (req, res) {
 app.get('/japan/page:NUM', function (req, res) {
     let pageNum = req.params.NUM;
     let start, end;
-<<<<<<< HEAD
-=======
-
->>>>>>> dfe2922ede8d304eea2b3fde0d7543dc7ad67795
     if (pageNum == null) {
         pageNum = 1;
         start = 0;
