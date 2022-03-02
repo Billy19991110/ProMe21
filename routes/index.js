@@ -11,6 +11,7 @@ exports.wishList = function(req, res){
       var name= post.name;
       var commodity_name= post.commodity_name;
       var Product_Description= post.Product_Description;
+      var count = 1
 
 	  if (!req.files)
 				return res.status(400).send('No files were uploaded.');
@@ -25,7 +26,7 @@ exports.wishList = function(req, res){
 	              if (err)
 
 	                return res.status(500).send(err);
-      					var sql = "INSERT INTO `users_image`(`email`,`name`,`commodity_name`,`Product_Description`, `image`) VALUES ('" + email + "','" + name + "','" + commodity_name + "','" + Product_Description + "','"  + img_name + "')";
+      					var sql = "INSERT INTO `users_image`(`email`,`name`,`commodity_name`,`Product_Description`, `image` , `count`) VALUES ('" + email + "','" + name + "','" + commodity_name + "','" + Product_Description + "','"  + img_name + "','" + count + "')";
     						var query = db.query(sql, function(err, result) {
                          console.log(result.insertId);
     							 res.redirect('todowishingPond');
