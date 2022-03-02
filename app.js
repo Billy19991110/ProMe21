@@ -40,7 +40,6 @@ app.get('/', function(req, res) {
 app.get('/japan/page:NUM', function(req, res) {
     let pageNum = req.params.NUM;
     let start, end;
-    console.log(pageNum);
 
     if (pageNum == null) {
         pageNum = 1;
@@ -50,10 +49,6 @@ app.get('/japan/page:NUM', function(req, res) {
         start = (pageNum - 1) * 12;
         end = 12;
     }
-    console.log(start);
-    console.log(end);
-
-
 
     conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1`, (SELECT COUNT(*) FROM `product`) AS COUNT FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 LIMIT ?,?', [start, end],
         function(err, result) {
