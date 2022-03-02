@@ -252,3 +252,61 @@ body {
 	transform:scale(1.1);
 	transition: ease-in-out transform .5s;
 }
+
+
+/* =======漢堡選單====== */
+
+/* 會員漢堡選單 */
+
+
+.header-right > .burger-areas{
+	float: left;
+  }
+   
+  .member-meau{
+	list-style: none;
+	padding-left: 0;
+	margin-top: 2vh;
+	clear: both;
+	/* 隱藏表單 */
+	max-height: 0;
+	overflow: hidden;
+	transition: .5s;
+	
+  }
+  
+  /* ˇ打開 */
+  input:checked ~ .member-meau{
+	max-height:250px;
+  }
+  
+  .member-meau li{
+	text-align: center;
+	
+  }
+  
+  .member-meau li a {
+   display: block ;
+   padding: 1vh 2vh;
+   color: #545b6e;
+  }
+  
+  .member-meau li a:hover{
+	background-color: #545b6e;
+	color: #89b0ae;
+  }
+   
+  .member-text{
+	text-decoration: none;
+  }
+  
+  /* 隱藏check box */
+  
+  input{
+	display: none;
+  }
+  
+  #burger-icon{
+	margin-left:4vh ;
+  }
+  
