@@ -18,6 +18,9 @@
 .oddColor {
 	background-color: #F0F0F0;
 }
+.cart {
+	height: calc(100% - 160px);
+}
 .productMain {
 	width: 90vw;
 	display: -webkit-flex;
