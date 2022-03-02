@@ -13,10 +13,10 @@
 					<div class="row col-md-3 flex-container">
 						<% for (let Japan of result) { %>
 							<div class="flex transformed itemAct">
-								<div class="divCenter">
+								<div class="divCenter" onclick="location.href='http://localhost:3000/product/<%= Japan.productID %>'">
 									<img src="<%= Japan.pictureSeat1 %>" alt="">
 								</div>
-								<div class="itemText">
+								<div class="itemText" onclick="location.href='http://localhost:3000/product/<%= Japan.productID %>'">
 									<p><%= Japan.productName %></p>
 									<p>價格：<%= Japan.productPrice %>元</p>
 								</div>	
@@ -28,19 +28,19 @@
 	
 			<div aria-label="Page navigation example ">
 				<ul class="pagination divCenter">
-				  <li class="page-item">
+				<li class="page-item">
 					<a class="page-link" href="#" aria-label="Previous">
-					  <span aria-hidden="true">&laquo;</span>
+					<span aria-hidden="true">&laquo;</span>
 					</a>
-				  </li>
-				  <li class="page-item"><a class="page-link" href="http://localhost:3000/japan/page1">1</a></li>
-				  <li class="page-item"><a class="page-link" href="http://localhost:3000/japan/page2">2</a></li>
-				  <li class="page-item"><a class="page-link" href="http://localhost:3000/japan/page3">3</a></li>
-				  <li class="page-item">
+				</li>
+				<li class="page-item"><a class="page-link" href="http://localhost:3000/japan/page1">1</a></li>
+				<li class="page-item"><a class="page-link" href="http://localhost:3000/japan/page2">2</a></li>
+				<li class="page-item"><a class="page-link" href="http://localhost:3000/japan/page3">3</a></li>
+				<li class="page-item">
 					<a class="page-link" href="#" aria-label="Next">
-					  <span aria-hidden="true">&raquo;</span>
+					<span aria-hidden="true">&raquo;</span>
 					</a>
-				  </li>
+				</li>
 				</ul>
 			</div>
 		</div>
