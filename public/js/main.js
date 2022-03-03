@@ -6,17 +6,25 @@ $(function() {
 	});
 
 	function refreshNewsUI() {
+		var cartHeight = $(".cart").height();
+		var barHeight = $("footer").height();
+		var windowHeight = $(window).height();
+		var Height = windowHeight - (barHeight * 2);
+
+		if (cartHeight < Height) {
+			$("main").addClass("cartHeight");
+		}
 		$(".productMain:odd").addClass("oddColor");
 		$(".deleteButton").on("click", function() {
 			var productIndex = $(this).closest(".oneProduct").index();
-			console.log(productIndex);
-			console.log(buyList[productIndex]);
+			// console.log(productIndex);
+			// console.log(buyList[productIndex]);
 			$.ajax({
 					type: "delete",
-					url: "cart",
+					url: "/cart",
 					data: buyList[productIndex],
 					success: function() {
-						alert("商品已刪除");
+						alert("商品已從購物車刪除");
 					}
 				})
 				.then(function(e) {
@@ -44,7 +52,7 @@ $(function() {
 					});
 				window.location = "/cart";
 			} else {
-				alert("NO");
+				alert("商品數量不可低於1");
 			}
 		});
 		$(".plusButton").on("click", function() {

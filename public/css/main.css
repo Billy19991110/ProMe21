@@ -18,6 +18,9 @@
 .oddColor {
 	background-color: #F0F0F0;
 }
+.cartHeight {
+	height: calc(100vh - 193.58px);
+}
 .productMain {
 	width: 90vw;
 	display: -webkit-flex;
@@ -113,7 +116,7 @@
 /* 結帳頁CSS */
 .checkout {
 	display: flex;
-	height: calc(100vh - 160px);
+	height: calc(100vh - 193.58px);
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
