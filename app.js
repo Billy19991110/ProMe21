@@ -122,7 +122,7 @@ app.get('/data', function (req, res) {
     conn.query('SELECT * FROM `buy` JOIN `picture` ON `buy`.`productID` = `picture`.`productID` JOIN `product` ON `buy`.`productID` = `product`.`productID`',
         function (err, result) {
             var jsonString = JSON.stringify(result);
-            res.send(jsonString);
+            res.send(jsonString );
         });
 });
 app.get("/cart", function (req, res) {
@@ -136,7 +136,7 @@ app.put("/cart", function (req, res) {
     conn.query("update buy set productNUM = ? where id = ?",
         [req.body.productNUM, req.body.id],
         function (err, rows) {
-            res.send(JSON.stringify(req.body));
+            res.send(JSON.stringify(req.body) );
         });
     console.log(req.body.productNUM);
 });
@@ -148,7 +148,7 @@ app.delete("/cart", function (req, res) {
         });
 });
 app.get("/checkout", function (req, res) {
-    res.render("checkout.ejs");
+    res.render("checkout.ejs" ,{status: 'loggedIn'} );
 });
 
 
