@@ -1,0 +1,27 @@
+
+      <div class='container my-5'>
+        <div class="card" style="width: 50%;">
+            <div class="card-body">
+              <% if (status =='loggedIn') {%>
+                <h5 class="card-title"> 嗨!    <%= user.email %> </h5>   
+                <button class="btn btn-info" ><a  style="color:white; text-decoration: none;" href="/logout">登出</a></button>
+                <button class="btn btn-info" ><a  style="color:white; text-decoration: none;" href="/myform">客服務表單</a></button>
+                <button class="btn btn-info" ><a  style="color:white; text-decoration: none;" href="/updateuser">修改會員資料</a></button>
+                 <button class="btn btn-info" ><a  style="color:white; text-decoration: none;" href="/wishList">許願表單</a></button>
+  
+  <%} else {%>
+    
+    <button class="btn btn-info" ><a  style="color:white; text-decoration: none;" href="/login">登入</a></button>
+    <button class="btn btn-info" ><a  style="color:white; text-decoration: none;" href="/register">註冊</a></button>
+
+    <%} %>
+
+
+
+              
+            </div>
+          </div>
+      </div>
+
+
+
