@@ -184,10 +184,7 @@ body {
 	font-weight: bold;
 }
 
-.carousel-control-next-icon,
-.carousel-control-prev-icon {
-	background-color: black;
-}
+
 
 .betaSlider-nav-btn {
 	background-image: url(/icon/left-arrow.png);
@@ -398,3 +395,14 @@ color: #545b6e;
 	margin-left:4vh ;
 	margin-top: -2vh;
 }
+
+
+/* ====許願清單圖==== */
+
+.wish-box img{
+	width: 60%;
+	float: right;
+	margin-top: -450px;" 
+	
+}
+
