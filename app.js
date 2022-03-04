@@ -1,14 +1,16 @@
 var express = require('express');
 var app = express();
+var mysql = require('mysql');
+var bodyparser = require('body-parser');
 
 app.listen(3000);
 app.use(express.static('public'));
+// app.use(bodyParser.urlencoded({ extended: false }));
 
 /* var bodyparser = require('bodyparser');
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json()); */
 
-var mysql = require('mysql');
 
 var conn = mysql.createConnection({
     multipleStatements: true,
@@ -124,25 +126,26 @@ app.get('/data', function (req, res) {
         });
 });
 app.get("/cart", function (req, res) {
-    conn.query('SELECT * FROM `buy` JOIN `picture` ON `buy`.`productID` = `picture`.`productID` JOIN `product` ON `buy`.`productID` = `product`.`productID`', [], function (err, result) {
-        res.render("cart.ejs", {
-            product: result
+    conn.query('SELECT * FROM `buy` JOIN `picture` ON `buy`.`productID` = `picture`.`productID` JOIN `product` ON `buy`.`productID` = `product`.`productID`',
+        [],
+        function (err, result) {
+            res.render("cart.ejs", { product: result });
         });
-    });
 });
 app.put("/cart", function (req, res) {
-    conn.query("update buy set productNUM = ? where byID = ?", [req.body.productNUM, req.body.byID],
+    conn.query("update buy set productNUM = ? where id = ?",
+        [req.body.productNUM, req.body.id],
         function (err, rows) {
             res.send(JSON.stringify(req.body));
-        }
-    );
+        });
+    console.log(req.body.productNUM);
 });
 app.delete("/cart", function (req, res) {
-    conn.query("delete from buy where byID = ?", [req.body.byID],
-        function (err, result) {
+    conn.query("delete from buy where byID = ?",
+        [req.body.byID],
+        (err, result) => {
             res.send(JSON.stringify(req.body));
-        }
-    );
+        });
 });
 app.get("/checkout", function (req, res) {
     res.render("checkout.ejs");
@@ -179,6 +182,7 @@ var
     fileUpload = require('express-fileupload'),
     mysql = require('mysql'),
     bodyParser = require("body-parser");
+const { log } = require('console');
 
 var connection = mysql.createConnection({
     host: 'localhost',
