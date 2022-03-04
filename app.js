@@ -129,7 +129,7 @@ app.get("/cart", function (req, res) {
     conn.query('SELECT * FROM `buy` JOIN `picture` ON `buy`.`productID` = `picture`.`productID` JOIN `product` ON `buy`.`productID` = `product`.`productID`',
         [],
         function (err, result) {
-            res.render("cart.ejs", { product: result });
+            res.render("cart.ejs", { product: result ,status: 'loggedIn' });
         });
 });
 app.put("/cart", function (req, res) {
