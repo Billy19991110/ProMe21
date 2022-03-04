@@ -9,11 +9,55 @@
 	<main>
 		<!-- 公告區 -->
 		<div class="Flex-container-banner">
-			<div>
-				預設為導覽頁籤
-				<img src="">
+			<div class="flex-banner">
+				<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+					<div class="carousel-indicators">
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="/banner/world (2).png" class="banner-pic" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="/banner/make a wish.png" class="banner-pic" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="/banner/sale.png" class="banner-pic" alt="...">
+					</div>
+				</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
 			</div>
 		</div>
+
+
+
+			<!--====== 公告區===== -->
+
+	<div class="container-news">
+    
+			<div class="news-box">
+				<div class="news-pic"><img src="/icon/news.png" alt=""></div>
+					<div class="news-inner">
+				
+						<div class="news-text1"><p>【228連續假期運送公告】228連續假期期間，物流運送一律暫停，敬請見諒。</p></div>
+						<div class="news-text2"><p>【客服時間異動】因應肺炎疫情，客服實施居家工作，客服人員服務時間改為10:00-18:00。</p></div>
+		
+				</div>    
+			</div>
+	</div>
+	
+	
+	<div class="indexline"></div>
 		<!--商品展示區  -->
 		<%- include("home_area.ejs") %>
 	</main>
