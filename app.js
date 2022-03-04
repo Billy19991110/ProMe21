@@ -75,7 +75,8 @@ app.get('/japan/page:NUM', function (req, res) {
     conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1`, (SELECT COUNT(*) FROM `product`) AS COUNT FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 LIMIT ?,?', [start, end],
         function (err, result) {
             res.render('japan.ejs', {
-                result
+                result,
+                status: 'loggedIn',
             });
         });
 })
@@ -98,7 +99,8 @@ app.get('/korea/page:NUM', function (req, res) {
     conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1`, (SELECT COUNT(*) FROM `product`) AS COUNT FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 2 LIMIT ?,?', [start, end],
         function (err, result) {
             res.render('korea.ejs', {
-                result
+                result,
+                 status: 'loggedIn',
             });
         });
 })
@@ -109,7 +111,7 @@ app.get('/product/:ID', function (req, res) {
     conn.query('SELECT * FROM `product`JOIN `picture` ON `product`.`productID` = `picture`.`productID`WHERE `product`.`productID` = ?', [`${id}`],
         function (err, result) {
             res.render('product.ejs', {
-                result
+                result,status: 'loggedIn',
             });
         });
 })
@@ -120,21 +122,21 @@ app.get('/data', function (req, res) {
     conn.query('SELECT * FROM `buy` JOIN `picture` ON `buy`.`productID` = `picture`.`productID` JOIN `product` ON `buy`.`productID` = `product`.`productID`',
         function (err, result) {
             var jsonString = JSON.stringify(result);
-            res.send(jsonString);
+            res.send(jsonString );
         });
 });
 app.get("/cart", function (req, res) {
     conn.query('SELECT * FROM `buy` JOIN `picture` ON `buy`.`productID` = `picture`.`productID` JOIN `product` ON `buy`.`productID` = `product`.`productID`',
         [],
         function (err, result) {
-            res.render("cart.ejs", { product: result });
+            res.render("cart.ejs", { product: result ,status: 'loggedIn' });
         });
 });
 app.put("/cart", function (req, res) {
     conn.query("update buy set productNUM = ? where id = ?",
         [req.body.productNUM, req.body.id],
         function (err, rows) {
-            res.send(JSON.stringify(req.body));
+            res.send(JSON.stringify(req.body) );
         });
     console.log(req.body.productNUM);
 });
@@ -146,7 +148,7 @@ app.delete("/cart", function (req, res) {
         });
 });
 app.get("/checkout", function (req, res) {
-    res.render("checkout.ejs");
+    res.render("checkout.ejs" ,{status: 'loggedIn'} );
 });
 
 
@@ -213,7 +215,7 @@ app.get('/todowishingPond', function (req, res) {
     connection.query('SELECT * FROM `users_image`',
         function (err, result) {
             res.render('todowishingPond.ejs', {
-                result
+                result,status: 'loggedIn',
             });
         })
 });
