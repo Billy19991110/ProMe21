@@ -73,7 +73,8 @@ app.get('/japan/page:NUM', function (req, res) {
     conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1`, (SELECT COUNT(*) FROM `product`) AS COUNT FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 LIMIT ?,?', [start, end],
         function (err, result) {
             res.render('japan.ejs', {
-                result
+                result,
+                status: 'loggedIn',
             });
         });
 })
@@ -96,7 +97,8 @@ app.get('/korea/page:NUM', function (req, res) {
     conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1`, (SELECT COUNT(*) FROM `product`) AS COUNT FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 2 LIMIT ?,?', [start, end],
         function (err, result) {
             res.render('korea.ejs', {
-                result
+                result,
+                 status: 'loggedIn',
             });
         });
 })
@@ -107,7 +109,7 @@ app.get('/product/:ID', function (req, res) {
     conn.query('SELECT * FROM `product`JOIN `picture` ON `product`.`productID` = `picture`.`productID`WHERE `product`.`productID` = ?', [`${id}`],
         function (err, result) {
             res.render('product.ejs', {
-                result
+                result,status: 'loggedIn',
             });
         });
 })
@@ -209,7 +211,7 @@ app.get('/todowishingPond', function (req, res) {
     connection.query('SELECT * FROM `users_image`',
         function (err, result) {
             res.render('todowishingPond.ejs', {
-                result
+                result,status: 'loggedIn',
             });
         })
 });
