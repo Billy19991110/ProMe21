@@ -26,15 +26,36 @@ conn.connect(function (err) {
 })
 
 ////////////////網頁首頁//////////////////
-app.get('/', function (req, res) {
+var cookieParser = require('cookie-parser')
+const loggedIn = require('./controllers/loggedin');
+
+app.use(cookieParser())
+app.get('/',loggedIn ,(req, res) =>{
+    console.log('cookie',req.user); 
+    if (req.user){
     conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 ORDER BY rand() LIMIT 4 ; SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 2 ORDER BY rand() LIMIT 4 ; ',
+    function (err, result) {
+        res.render('index.ejs', {
+            japan: result[0],
+            korea: result[1],
+            status: 'loggedIn', 
+            user: req.user
+        });
+    
+    })}else{
+        conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 ORDER BY rand() LIMIT 4 ; SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 2 ORDER BY rand() LIMIT 4 ; ',
         function (err, result) {
             res.render('index.ejs', {
                 japan: result[0],
-                korea: result[1]
+                korea: result[1],
+                status: 'no', 
+                user: 'nothing'
             });
-        });
+        
+        })
+    } 
 })
+
 
 //////////////日本頁/////////////////
 app.get('/japan/page:NUM', function (req, res) {
