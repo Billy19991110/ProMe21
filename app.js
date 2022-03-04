@@ -1,14 +1,16 @@
 var express = require('express');
 var app = express();
+var mysql = require('mysql');
+var bodyparser = require('body-parser');
 
 app.listen(3000);
 app.use(express.static('public'));
+// app.use(bodyParser.urlencoded({ extended: false }));
 
 /* var bodyparser = require('bodyparser');
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json()); */
 
-var mysql = require('mysql');
 
 var conn = mysql.createConnection({
     multipleStatements: true,
@@ -26,15 +28,36 @@ conn.connect(function (err) {
 })
 
 ////////////////網頁首頁//////////////////
-app.get('/', function (req, res) {
+var cookieParser = require('cookie-parser')
+const loggedIn = require('./controllers/loggedin');
+
+app.use(cookieParser())
+app.get('/',loggedIn ,(req, res) =>{
+    console.log('cookie',req.user); 
+    if (req.user){
     conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 ORDER BY rand() LIMIT 4 ; SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 2 ORDER BY rand() LIMIT 4 ; ',
+    function (err, result) {
+        res.render('index.ejs', {
+            japan: result[0],
+            korea: result[1],
+            status: 'loggedIn', 
+            user: req.user
+        });
+    
+    })}else{
+        conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 ORDER BY rand() LIMIT 4 ; SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 2 ORDER BY rand() LIMIT 4 ; ',
         function (err, result) {
             res.render('index.ejs', {
                 japan: result[0],
-                korea: result[1]
+                korea: result[1],
+                status: 'no', 
+                user: 'nothing'
             });
-        });
+        
+        })
+    } 
 })
+
 
 //////////////日本頁/////////////////
 app.get('/japan/page:NUM', function (req, res) {
@@ -52,7 +75,8 @@ app.get('/japan/page:NUM', function (req, res) {
     conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1`, (SELECT COUNT(*) FROM `product`) AS COUNT FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 LIMIT ?,?', [start, end],
         function (err, result) {
             res.render('japan.ejs', {
-                result
+                result,
+                status: 'loggedIn',
             });
         });
 })
@@ -75,7 +99,8 @@ app.get('/korea/page:NUM', function (req, res) {
     conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1`, (SELECT COUNT(*) FROM `product`) AS COUNT FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 2 LIMIT ?,?', [start, end],
         function (err, result) {
             res.render('korea.ejs', {
-                result
+                result,
+                 status: 'loggedIn',
             });
         });
 })
@@ -86,7 +111,7 @@ app.get('/product/:ID', function (req, res) {
     conn.query('SELECT * FROM `product`JOIN `picture` ON `product`.`productID` = `picture`.`productID`WHERE `product`.`productID` = ?', [`${id}`],
         function (err, result) {
             res.render('product.ejs', {
-                result
+                result,status: 'loggedIn',
             });
         });
 })
@@ -97,32 +122,33 @@ app.get('/data', function (req, res) {
     conn.query('SELECT * FROM `buy` JOIN `picture` ON `buy`.`productID` = `picture`.`productID` JOIN `product` ON `buy`.`productID` = `product`.`productID`',
         function (err, result) {
             var jsonString = JSON.stringify(result);
-            res.send(jsonString);
+            res.send(jsonString );
         });
 });
 app.get("/cart", function (req, res) {
-    conn.query('SELECT * FROM `buy` JOIN `picture` ON `buy`.`productID` = `picture`.`productID` JOIN `product` ON `buy`.`productID` = `product`.`productID`', [], function (err, result) {
-        res.render("cart.ejs", {
-            product: result
+    conn.query('SELECT * FROM `buy` JOIN `picture` ON `buy`.`productID` = `picture`.`productID` JOIN `product` ON `buy`.`productID` = `product`.`productID`',
+        [],
+        function (err, result) {
+            res.render("cart.ejs", { product: result ,status: 'loggedIn' });
         });
-    });
 });
 app.put("/cart", function (req, res) {
-    conn.query("update buy set productNUM = ? where byID = ?", [req.body.productNUM, req.body.byID],
+    conn.query("update buy set productNUM = ? where id = ?",
+        [req.body.productNUM, req.body.id],
         function (err, rows) {
-            res.send(JSON.stringify(req.body));
-        }
-    );
+            res.send(JSON.stringify(req.body) );
+        });
+    console.log(req.body.productNUM);
 });
 app.delete("/cart", function (req, res) {
-    conn.query("delete from buy where byID = ?", [req.body.byID],
-        function (err, result) {
+    conn.query("delete from buy where byID = ?",
+        [req.body.byID],
+        (err, result) => {
             res.send(JSON.stringify(req.body));
-        }
-    );
+        });
 });
 app.get("/checkout", function (req, res) {
-    res.render("checkout.ejs");
+    res.render("checkout.ejs" ,{status: 'loggedIn'} );
 });
 
 
@@ -156,6 +182,7 @@ var
     fileUpload = require('express-fileupload'),
     mysql = require('mysql'),
     bodyParser = require("body-parser");
+const { log } = require('console');
 
 var connection = mysql.createConnection({
     host: 'localhost',
@@ -188,7 +215,7 @@ app.get('/todowishingPond', function (req, res) {
     connection.query('SELECT * FROM `users_image`',
         function (err, result) {
             res.render('todowishingPond.ejs', {
-                result
+                result,status: 'loggedIn',
             });
         })
 });

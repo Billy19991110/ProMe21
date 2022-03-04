@@ -8,7 +8,7 @@
 			</a>
 		</div>
 		<div class="floatR">
-			<a href="/login" class="icon-box">
+			<a  id="loginIcon" href="/login" class="icon-box">
 				<img src="/icon/user.png" class="icon-pic">
 			</a>
 			<a href="http://localhost:3000/cart" class="icon-box">
@@ -16,12 +16,33 @@
 			</a>
 
 			<div class="burger-areas">  
-				<label for="switch"  class="icon-box"><img src="/素材圖片/icon/burger.png" class="icon-pic" id="burger-icon"></label>
+				<label for="switch"  class="icon-box"><img src="/icon/bullet-list.png" class="icon-pic" id="burger-icon"></label>
 				<input type="checkbox" id="switch">
-				<ul class="member-meau">
-				  <li class="member-list"><a href="" class="member-text">變更密碼</a></li>
-				  <li class="member-list"><a href="" class="member-text">客服表單</a></li>
-				  <li class="member-list"><a href="" class="member-text">許願清單</a></li>
+				<% if (status =='loggedIn') {%>
+				<style>
+					#loginIcon{
+						display: none;}
+				</style>
+					<ul class="member-meau">
+						<li class="member-list"><a href="/updateuser" class="member-text">變更密碼</a></li> 
+						<li class="member-list"><a href="/myform" class="member-text">客服表單</a></li> 
+						<li class="member-list"><a href="/wishList" class="member-text">許願清單</a></li> 
+						<li class="member-list"><a href="/logout" class="member-text">登出</a></li> 
+
+		  
+				  <%} else {%>
+				<style>
+					.burger-areas{
+					display: none;}
+				</style>	
+		
+				<%} %>
+		
+
+<!-- 					
+					<li class="member-list"><a href="" class="member-text">變更密碼</a></li>
+					<li class="member-list"><a href="" class="member-text">客服表單</a></li>
+					<li class="member-list"><a href="" class="member-text">許願清單</a></li> -->
 				</ul>
 				</div>
 		</div>
@@ -34,7 +55,7 @@
 					<a href="http://localhost:3000/korea/page1">韓國專區</a>
 				</li>
 				<li class="itemlist">
-					<a href="/todowishingPond">許願清單</a>
+					<a href="/todowishingPond">許願池</a>
 				</li>
 			</ul>
 		</div>

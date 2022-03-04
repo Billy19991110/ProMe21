@@ -4,7 +4,7 @@ const loggedIn = require('../controllers/loggedin');
 const logout =require('../controllers/logout')
 const router = express.Router();
 
-router.get('/', loggedIn, (req, res) => {
+router.get('/demo', loggedIn, (req, res) => {
     if (req.user) {
         res.render('index', { status: 'loggedIn', user: req.user });
     }else{
@@ -18,7 +18,6 @@ router.get('/register', (req, res) => {
 })
 router.get('/myform', (req, res) => {
     res.sendFile("myform.html", { root: "./public" })
-    
 })
 
 
