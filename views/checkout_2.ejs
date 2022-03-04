@@ -1,41 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include("import.ejs") %>	
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
+	<%- include("import.ejs") %>	
+	<link rel="stylesheet" type="text/css" href="/css/index.css">
 </head>
 <body>
-    <%- include("header.ejs") %>
-    <main>
-    <label><h3>結帳資料</h3></label>
-    <div class="checkoutArea">
-        <div class="checkoutList">
-            <div>
-                <label>付款方式:</label><br>
-                <label><input type="radio" name="pay" >貨到付款</label><br>
-                <label><input type="radio" name="pay" >超商取貨付款</label><br>
-                <label><input type="radio" name="pay" >信用卡付款</label><br>
-            </div>
-            <div>
-                <label>姓名：<br><input type="text" name="user"></label><br>
-            </div>
-            <div>
-                <label>地址：<br><input type="text" name="adress"></label><br>
-            </div>
-            <div>
-                <label>取貨超商：<br><input type="text" name="adress"></label><br>
-            </div>
-            <div>
-                <label>電話：<br><input type="tel" name="phonenum"></label><br>
-            </div>
-
-    <br>
-        </div>
-    <button type="button">送出訂單</button>
-    
-    </div>
-    </main>
-    <%- include("footer.ejs") %>
+	<%- include("header.ejs") %>
+	<main>
+		<label><h3>結帳資料</h3></label>
+		<div class="checkoutArea">
+			<div class="checkoutList">
+				<div>
+					<label>付款方式:</label><br>
+					<label><input type="radio" name="pay" >貨到付款</label><br>
+					<label><input type="radio" name="pay" >超商取貨付款</label><br>
+					<label><input type="radio" name="pay" >信用卡付款</label><br>
+				</div>
+				<div>
+					<label>姓名：<br><input type="text" name="user"></label><br>
+				</div>
+				<div>
+					<label>地址：<br><input type="text" name="adress"></label><br>
+				</div>
+				<div>
+					<label>取貨超商：<br><input type="text" name="adress"></label><br>
+				</div>
+				<div>
+					<label>電話：<br><input type="tel" name="phonenum"></label><br>
+				</div>
+				<br>
+			</div>
+			<a href="checkout"><button type="button">送出訂單</button></a>
+		</div>
+	</main>
+	<%- include("footer.ejs") %>
 </body>
 </html>
