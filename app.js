@@ -20,7 +20,7 @@ var conn = mysql.createConnection({
     host: 'localhost',
     port: 3306,
     user: 'root',
-    password: 'root'
+    password: ''
 
 });
 
@@ -204,7 +204,7 @@ const {
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'root',
+    password: '',
     database: 'test_v1'
 });
 
