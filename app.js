@@ -140,14 +140,14 @@ app.get('/shopp/:ID', function (req, res) {
 //INSERT INTO `buy` (`byID`, `userID`, `productID`, `productNUM`) VALUES (NULL, '1', '1', '1');
 
 let sqlCart = "SELECT `buy`.`byID`, `buy`.`id`, `buy`.`productID`, \
-                `buy`.`productNUM`, `picture`.`pictureSeat1` FROM `buy` \
+                `buy`.`productNUM`, `picture`.`pictureSeat1`, `product`.`productName`, `product`.`productPrice` FROM `buy` \
                 JOIN `picture` ON `buy`.`productID` = `picture`.`productID`\
                 JOIN `product` ON `buy`.`productID` = `product`.`productID`" ;
 //WHERE `buy`.`id` = ?";
 
 app.get('/data', function (req, res) {
     // let id = req.user.id;
-    conn.query(sqlCart, [id, id],
+    conn.query(sqlCart, [],
         function (err, result) {
             var jsonString = JSON.stringify(result);
             res.send(jsonString);
@@ -164,10 +164,8 @@ app.get("/cart", function (req, res) {
         });
 });
 app.put("/cart", function (req, res) {
-    let Num = req.body.productNum;
-    let id = req.body.id;
     conn.query("update buy set productNUM = ? where id = ?",
-        [Num, id],
+        [],
         function (err, rows) {
             res.send(JSON.stringify(req.body));
         });
