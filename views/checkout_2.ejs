@@ -3,34 +3,61 @@
 <head>
 	<%- include("import.ejs") %>	
 	<link rel="stylesheet" type="text/css" href="/css/index.css">
+	<style>
+		.checkoutButton {
+			background-color: #FFF;
+			color: #555B6E;
+			border: 1px #555B6E solid;margin: 0.5vh;
+			width: 10vw;
+			border-radius: 8px;
+			font-weight: bold;
+			text-decoration: none;
+		}.checkoutButton:hover {
+			background-color: #555B6E;
+			color: #FFF;
+			border: 1px #FFF solid;margin: 0.5vh;
+		}
+	</style>
 </head>
 <body>
 	<%- include("header.ejs") %>
 	<main>
-		<label><h3>結帳資料</h3></label>
-		<div class="checkoutArea">
-			<div class="checkoutList">
-				<div>
-					<label>付款方式:</label><br>
-					<label><input type="radio" name="pay" >貨到付款</label><br>
-					<label><input type="radio" name="pay" >超商取貨付款</label><br>
-					<label><input type="radio" name="pay" >信用卡付款</label><br>
+		<div class="container">
+			<div class="card" style="width: 100%;">
+				<div class="card-body">
+					<h5 class="card-title">結帳資料</h5>
+					<div>
+						<label>付款方式:</label>
+					</div>
+					<div class="form-group">
+						&nbsp&nbsp<label><input type="radio" name="pay">貨到付款</label>
+					</div>
+					<div class="form-group">
+						&nbsp&nbsp<label><input type="radio" name="pay">超商取貨付款</label>
+					</div>
+					<div class="form-group">
+						&nbsp&nbsp<label><input type="radio" name="pay">信用卡付款</label>
+					</div>
+					<div class="form-group">
+						<label>姓名：</label>
+						<input type="text" name="user" class="form-control">
+					</div>
+					<div class="form-group">
+						<label>地址：</label>
+						<input type="text" name="adress" class="form-control">
+					</div>
+					<div class="form-group">
+						<label>取貨超商：</label>
+						<input type="text" name="adress" class="form-control">
+					</div>
+					<div class="form-group">
+						<label>電話：</label>
+						<input type="text" name="phonenum" class="form-control">
+					</div>
+					<br>
+					<a href="checkout"><input type="button" value="送出訂單" class="checkoutButton"></a>
 				</div>
-				<div>
-					<label>姓名：<br><input type="text" name="user"></label><br>
-				</div>
-				<div>
-					<label>地址：<br><input type="text" name="adress"></label><br>
-				</div>
-				<div>
-					<label>取貨超商：<br><input type="text" name="adress"></label><br>
-				</div>
-				<div>
-					<label>電話：<br><input type="tel" name="phonenum"></label><br>
-				</div>
-				<br>
 			</div>
-			<a href="checkout"><button type="button">送出訂單</button></a>
 		</div>
 	</main>
 	<%- include("footer.ejs") %>
