@@ -43,7 +43,7 @@
 <body>
     <%- include("header.ejs") %>
 
-    <% for (var Item of result) { %>
+    <% for (var Item of product) { %>
     <!-- Responsive navbar-->
     <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container px-5">
@@ -83,7 +83,7 @@
                         <option>6</option>  -->
                     </select>
                 </div>
-                <a class="btn btn-primary" href="/shopp">加入購物車</a>
+                <a class="btn btn-primary" href="http://localhost:3000/shopp/<%= Item.productID %>">加入購物車</a>
             </div>
         </div>
         <!-- Call to Action-->

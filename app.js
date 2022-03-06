@@ -34,8 +34,15 @@ const loggedIn = require('./controllers/loggedin');
 
 app.use(cookieParser())
 app.get('/', loggedIn, (req, res) => {
+    let sql = "SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` \
+    JOIN `picture` ON `product`.`productID` = `picture`.`productID` \
+    WHERE `product`.`nationID` = 1 ORDER BY rand() LIMIT 4 ; \
+    SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` \
+    JOIN `picture` ON `product`.`productID` = `picture`.`productID` \
+    WHERE `product`.`nationID` = 2 ORDER BY rand() LIMIT 4" ;
+
     if (req.user) {
-        conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 ORDER BY rand() LIMIT 4 ; SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 2 ORDER BY rand() LIMIT 4 ; ',
+        conn.query(sql,
             function (err, result) {
                 res.render('index.ejs', {
                     japan: result[0],
@@ -45,7 +52,7 @@ app.get('/', loggedIn, (req, res) => {
                 });
             })
     } else {
-        conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 ORDER BY rand() LIMIT 4 ; SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1` FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 2 ORDER BY rand() LIMIT 4 ; ',
+        conn.query(sql,
             function (err, result) {
                 res.render('index.ejs', {
                     japan: result[0],
@@ -57,6 +64,9 @@ app.get('/', loggedIn, (req, res) => {
     }
 })
 
+let sqlPage = "SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1`, \
+        (SELECT COUNT(*) FROM `product`) AS COUNT FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` \
+        WHERE `product`.`nationID` = ? LIMIT ?,?" ;
 
 //////////////日本頁/////////////////
 app.get('/japan/page:NUM', function (req, res) {
@@ -70,8 +80,7 @@ app.get('/japan/page:NUM', function (req, res) {
         start = (pageNum - 1) * 12;
         end = 12;
     }
-
-    conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1`, (SELECT COUNT(*) FROM `product`) AS COUNT FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 1 LIMIT ?,?', [start, end],
+    conn.query(sqlPage, [1, start, end],
         function (err, result) {
             res.render('japan.ejs', {
                 result,
@@ -79,11 +88,8 @@ app.get('/japan/page:NUM', function (req, res) {
             });
         });
 })
-
-
 //////////////韓國頁/////////////////
 app.get('/korea/page:NUM', function (req, res) {
-
     let pageNum = req.params.NUM;
     let start, end;
     if (pageNum == null) {
@@ -94,8 +100,7 @@ app.get('/korea/page:NUM', function (req, res) {
         start = (pageNum - 1) * 12;
         end = 12;
     }
-
-    conn.query('SELECT `product`.`productID`,`product`.`productName`,`product`.`productPrice`,`picture`.`pictureSeat1`, (SELECT COUNT(*) FROM `product`) AS COUNT FROM `product` JOIN `picture` ON `product`.`productID` = `picture`.`productID` WHERE `product`.`nationID` = 2 LIMIT ?,?', [start, end],
+    conn.query(sqlPage, [2, start, end],
         function (err, result) {
             res.render('korea.ejs', {
                 result,
@@ -106,31 +111,51 @@ app.get('/korea/page:NUM', function (req, res) {
 
 //////////////指定商品頁/////////////////
 app.get('/product/:ID', function (req, res) {
+    let sql = "SELECT * FROM `product`JOIN `picture` ON `product`.`productID` = `picture`.`productID` \
+                WHERE `product`.`productID` = ?" ;
     let id = req.params.ID;
-    conn.query('SELECT * FROM `product`JOIN `picture` ON `product`.`productID` = `picture`.`productID`WHERE `product`.`productID` = ?', [`${id}`],
+    conn.query(sql, [id],
         function (err, result) {
             res.render('product.ejs', {
-                result,
-                status: 'loggedIn',
+                product: result, status: 'loggedIn',
             });
-        });
+        }
+    );
 })
 
-app.post('/shopp', function (req, res) {
-
+app.get('/shopp/:ID', function (req, res) {
+    let sql = "INSERT INTO `buy` (`byID`, `id`, `productID`, `productNUM`) VALUES (NULL, '1', ? , '1') ; \
+                SELECT * FROM`product`JOIN `picture` ON`product`.`productID` = `picture`.`productID` \
+                WHERE`product`.`productID` = ? "
+    let id = req.params.ID;
+    conn.query(sql, [id, id],
+        function (err, result) {
+            res.render('product.ejs', {
+                product: result[1], status: 'loggedIn',
+            })
+        }
+    );
 })
 
 //INSERT INTO `buy` (`byID`, `userID`, `productID`, `productNUM`) VALUES (NULL, '1', '1', '1');
 
+let sqlCart = "SELECT `buy`.`byID`, `buy`.`id`, `buy`.`productID`, \
+                `buy`.`productNUM`, `picture`.`pictureSeat1` FROM `buy` \
+                JOIN `picture` ON `buy`.`productID` = `picture`.`productID`\
+                JOIN `product` ON `buy`.`productID` = `product`.`productID`" ;
+//WHERE `buy`.`id` = ?";
+
 app.get('/data', function (req, res) {
-    conn.query('SELECT * FROM `buy` JOIN `picture` ON `buy`.`productID` = `picture`.`productID` JOIN `product` ON `buy`.`productID` = `product`.`productID`',
+    // let id = req.user.id;
+    conn.query(sqlCart, [id, id],
         function (err, result) {
             var jsonString = JSON.stringify(result);
             res.send(jsonString);
         });
 });
 app.get("/cart", function (req, res) {
-    conn.query('SELECT * FROM `buy` JOIN `picture` ON `buy`.`productID` = `picture`.`productID` JOIN `product` ON `buy`.`productID` = `product`.`productID`', [],
+    // let id = req.user.id;
+    conn.query(sqlCart, [],
         function (err, result) {
             res.render("cart.ejs", {
                 product: result,
@@ -146,7 +171,6 @@ app.put("/cart", function (req, res) {
         function (err, rows) {
             res.send(JSON.stringify(req.body));
         });
-    console.log(req.body.productNUM);
 });
 app.delete("/cart", function (req, res) {
     conn.query("delete from buy where byID = ?",
