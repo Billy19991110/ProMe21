@@ -261,7 +261,7 @@ app.get('/todowishingPond', function (req, res) {
 
 
 app.get('/customer_feedback', function (req, res) {
-    connection.query('SELECT * FROM `form`',
+    connection.query('SELECT * FROM `form` ORDER BY `form`.`id` DESC ',
         function (err, result) {
             res.render('customer_feedback.ejs', {
                 result,
