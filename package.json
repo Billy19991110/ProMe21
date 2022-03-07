@@ -14,5 +14,24 @@
     "parser": "^0.1.4",
     "routes": "^2.1.0",
     "then-busboy": "^5.1.1"
-  }
+  },
+  "name": "prome21",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Billy19991110/ProMe21.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Billy19991110/ProMe21/issues"
+  },
+  "homepage": "https://github.com/Billy19991110/ProMe21#readme"
 }
