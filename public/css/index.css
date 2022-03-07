@@ -40,10 +40,12 @@ body {
 
 .floatL {
 	float: left;
+	margin-left: 50px;
 }
 
 .floatR {
 	float: right;
+	margin-right: 50px;
 }
 
 .icon-box {
@@ -266,8 +268,8 @@ body {
 
 .news-text1{
 	position: relative;
-animation: change 2s ;
--webkit-animation: change 2s ;
+animation: change 3s ;
+-webkit-animation: change 3s ;
 animation-direction: alternate;
 -webkit-animation-direction: alternate;
 animation-iteration-count: infinite;
@@ -289,8 +291,8 @@ animation-iteration-count: infinite;
 
 .news-text2{
 	position: relative;
-	animation: change2 2s ;
-	-webkit-animation: change2 2s ;
+	animation: change2 3s ;
+	-webkit-animation: change2 3s ;
 	animation-direction: alternate;
 	-webkit-animation-direction: alternate;
 	animation-iteration-count: infinite;
@@ -336,8 +338,18 @@ to{bottom: 40px;}
 .itemAct:hover{
 	transform:scale(1.1);
 	transition: ease-in-out transform .5s;
-}
+	
+	
 
+
+}
+.itemAct{
+	width: 200px;
+	height: 300px;
+	margin: 15px;
+	box-shadow: 2px 2px 10px   rgba(0, 0, 0, 0.5);
+	border-radius: 3px;
+}
 
 /* =======漢堡選單====== */
 
@@ -374,11 +386,13 @@ input:checked ~ .member-meau{
 display: block ;
 padding: 1vh 2vh;
 color: #545b6e;
+
 }
 
 .member-meau li a:hover{
 	background-color: #545b6e;
 	color: #89b0ae;
+	border-radius: 5px;
 }
 
 .member-text{
@@ -402,7 +416,23 @@ color: #545b6e;
 .wish-box img{
 	width: 60%;
 	float: right;
-	margin-top: -450px;" 
+	margin-top: -450px;
+	
+}
+
+.areaTitle{
+	width: 80%;
+	margin: 0px auto;
+	margin-bottom: 30px;
+	margin-top: 10px;
+	
+}
+
+.areaTitle span{
+	font-size: 3vh;
+	font-family: 'Kaisei Tokumin', serif;
+	
+	
 	
 }
 
