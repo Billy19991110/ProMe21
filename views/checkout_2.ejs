@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<%- include("import.ejs") %>	
+	<%- include("import.ejs") %>
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
 	<link rel="stylesheet" type="text/css" href="/css/index.css">
 	<style>
 		.checkoutButton {
@@ -21,45 +22,46 @@
 </head>
 <body>
 	<%- include("header.ejs") %>
-	<main>
-		<div class="container">
-			<div class="card" style="width: 100%;">
-				<div class="card-body">
-					<h5 class="card-title">結帳資料</h5>
-					<div class="form-group">
-						<label>姓名：</label>
-						<input type="text" name="user" class="form-control">
-					</div>
-					<div>
-						<label>付款方式:</label>
-					</div>
-					<div class="form-group">
-						&nbsp&nbsp<label><input type="radio" name="pay">貨到付款</label>
-					</div>
-					<div class="form-group">
-						&nbsp&nbsp<label><input type="radio" name="pay">信用卡付款</label>
-					</div>
-					<div class="form-group">
-						&nbsp&nbsp<label><input type="radio" name="pay">超商取貨付款</label>
-					</div>
-					<div class="form-group">
-						<label>地址：</label>
-						<input type="text" name="adress" class="form-control">
-					</div>
-					<div class="form-group">
-						<label>取貨超商：</label>
-						<input type="text" name="adress" class="form-control">
-					</div>
-					<div class="form-group">
-						<label>電話：</label>
-						<input type="text" name="phonenum" class="form-control">
-					</div>
-					<br>
-					<a href="checkout"><input type="button" value="送出訂單" class="checkoutButton"></a>
+	<main class="container cart">
+		<div class="card" style="width: 100%;">
+			<div class="card-body">
+				<h5 class="card-title">結帳資料</h5>
+				<div class="form-group">
+					<label>姓名：</label>
+					<input type="text" name="user" class="form-control">
 				</div>
+				<div>
+					<label>付款方式:</label>
+				</div>
+				<div class="form-group">
+					&nbsp&nbsp<label><input type="radio" name="pay">貨到付款</label>
+				</div>
+				<div class="form-group">
+					&nbsp&nbsp<label><input type="radio" name="pay">信用卡付款</label>
+				</div>
+				<div class="form-group">
+					&nbsp&nbsp<label><input type="radio" name="pay">超商取貨付款</label>
+				</div>
+				<div class="form-group">
+					<label>地址：</label>
+					<input type="text" name="adress" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>取貨超商：</label>
+					<input type="text" name="adress" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>電話：</label>
+					<input type="text" name="phonenum" class="form-control">
+				</div>
+				<br>
+				<a href="checkout"><input type="button" value="送出訂單" class="checkoutButton"></a>
 			</div>
 		</div>
 	</main>
 	<%- include("footer.ejs") %>
+
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>
