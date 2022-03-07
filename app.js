@@ -124,7 +124,7 @@ app.get('/product/:ID', function (req, res) {
 })
 
 app.get('/shopp/:ID', function (req, res) {
-    let sql = "INSERT INTO `buy` (`byID`, `id`, `productID`, `productNUM`) VALUES (NULL, '7', ? , '1') ; \
+    let sql = "INSERT INTO `buy` (`byID`, `id`, `productID`, `productNUM`) VALUES (NULL, '1', ? , '1') ; \
                 SELECT * FROM`product`JOIN `picture` ON`product`.`productID` = `picture`.`productID` \
                 WHERE`product`.`productID` = ? "
     let id = req.params.ID;
@@ -139,8 +139,8 @@ app.get('/shopp/:ID', function (req, res) {
 
 //INSERT INTO `buy` (`byID`, `userID`, `productID`, `productNUM`) VALUES (NULL, '1', '1', '1');
 
-let sqlCart = "SELECT `buy`.`byID`, `buy`.`id`, `buy`.`productID`, `buy`.`productNUM`, `picture`.`pictureSeat1`, \
-                `product`.`productName`, `product`.`productPrice` FROM `buy` \
+let sqlCart = "SELECT `buy`.`byID`, `buy`.`id`, `buy`.`productID`, \
+                `buy`.`productNUM`, `picture`.`pictureSeat1`, `product`.`productName`, `product`.`productPrice` FROM `buy` \
                 JOIN `picture` ON `buy`.`productID` = `picture`.`productID`\
                 JOIN `product` ON `buy`.`productID` = `product`.`productID`" ;
 //WHERE `buy`.`id` = ?";
@@ -246,9 +246,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileUpload());
 
 
-app.get('/wishList', routes.wishList); //call for main index page
-app.post('/', routes.wishList); //call for signup post 
-//Middleware
+app.get('/wishList', routes.wishList); 
+app.post('/', routes.wishList); 
 
 app.get('/todowishingPond', function (req, res) {
     connection.query('SELECT * FROM `users_image`',
@@ -259,6 +258,19 @@ app.get('/todowishingPond', function (req, res) {
             });
         })
 });
+
+
+app.get('/customer_feedback', function (req, res) {
+    connection.query('SELECT * FROM `form` ORDER BY `form`.`id` DESC ',
+        function (err, result) {
+            res.render('customer_feedback.ejs', {
+                result,
+                status: 'loggedIn',
+            });
+        })
+});
+
+
 // =====demo=====
 
 
