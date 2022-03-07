@@ -13,7 +13,7 @@ form.addEventListener('submit', () => {
         }
     }
     )
-    setTimeout(function(){location.href="/"} , 100)
+    setTimeout(function(){location.href="/customer_feedback"} , 1000)
 
 })
 

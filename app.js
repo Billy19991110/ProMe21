@@ -20,7 +20,7 @@ var conn = mysql.createConnection({
     host: 'localhost',
     port: 3306,
     user: 'root',
-    password: 'root'
+    password: ''
 
 });
 
@@ -226,7 +226,7 @@ const {
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'root',
+    password: '',
     database: 'test_v1'
 });
 
@@ -261,7 +261,7 @@ app.get('/todowishingPond', function (req, res) {
 
 
 app.get('/customer_feedback', function (req, res) {
-    connection.query('SELECT * FROM `form`',
+    connection.query('SELECT * FROM `form` ORDER BY `form`.`id` DESC ',
         function (err, result) {
             res.render('customer_feedback.ejs', {
                 result,
