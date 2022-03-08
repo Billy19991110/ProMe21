@@ -27,13 +27,48 @@
 		<script>window.jQuery || document.write('<script src="/include2/jquery/jquery-1.12.0.min.js" type="text/javascript"><\/script>')</script>
 		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 		<script defer="" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+		<!-- ====字型==== -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&display=swap" rel="stylesheet">
 		<link href="/css/index.css" rel="stylesheet" type="text/css">
 	
 		<title>Dai GOAT</title>
 
 		<style>
-			  a, a:hover, a:focus {
+a, a:hover, a:focus {
     text-decoration: none;
+
+}
+.logintext{
+	font-family: 'Kiwi Maru', serif;
+	font-size: 20px;
+	font-weight: bolder;
+
+}
+.card-title{
+	font-family: 'Kiwi Maru', serif;
+	font-size: 25px;
+	font-weight: bolder;
+}
+.card-body{
+	background-color:#ffd6ba ;
+	opacity: 0.7;
+	box-shadow: 2px 2px 10px rgba(109, 108, 108, 0.705);
+}
+.btn{
+	background-color: #89b0ae;
+	color: #f9f9f9;
+	font-size: 20px;
+	
+}
+.btn:hover{
+	background-color: #f9f9f9;
+	color: #555b6e;
+	font-weight: bolder;
+	border-radius: 20px;
+	transition: all 1s;
 }
 		</style>
 	
@@ -85,17 +120,17 @@
               <h5 class="card-title">登入 </h5>
               <form onsubmit="return false" id="form">
                 <div class="form-group">
-                  <label for="email">請輸入email</label>
+                  <label for="email" class="logintext">請輸入email</label>
                   <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
                 <div class="form-group">
-                  <label for="password">請輸入密碼</label>
+                  <label for="password" class="logintext">請輸入密碼</label>
                   <input type="password" class="form-control" id="password" autocapitalize="off" required placeholder="Password">
                 </div>
                 <div  style="display:none ;" class="alert alert-danger" role="alert"  id="error"></div>
                 <div  style="display:none ;" class="alert alert-success" role="alert"  id="success"></div>
-                <button type="submit" class="btn btn-primary"> </a> 登入</button>
-                <a href="/register"  class="btn btn-primary">  註冊  </a>
+                <button type="submit" class="btn"> </a> 登入</button>
+                <a href="/register"  class="btn">  註冊  </a>
               </form>
             </div>
           </div>

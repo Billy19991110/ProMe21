@@ -27,6 +27,12 @@
 		<script>window.jQuery || document.write('<script src="/include2/jquery/jquery-1.12.0.min.js" type="text/javascript"><\/script>')</script>
 		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 		<script defer="" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- ====字型==== -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&display=swap" rel="stylesheet">
+
 		<link href="/css/index.css" rel="stylesheet" type="text/css">
 	
 		<title>Dai GOAT</title>
@@ -34,7 +40,41 @@
     <style>
         a, a:hover, a:focus {
     text-decoration: none;
+  }
+  .card-title{
+	font-family: 'Kiwi Maru', serif;
+	font-size: 25px;
+	font-weight: bolder;
 }
+#form-text{
+  font-family: 'Kiwi Maru', serif;
+	font-size: 20px;
+	font-weight: bolder;
+}
+.card-body{
+	background-color:#ffd6ba ;
+	opacity: 0.7;
+	box-shadow: 2px 2px 10px rgba(109, 108, 108, 0.705);
+}
+.btn{
+	background-color: #89b0ae;
+	color: #f9f9f9;
+	font-size: 20px;
+	
+}
+.btn:hover{
+	background-color: #f9f9f9;
+	color: #555b6e;
+	font-weight: bolder;
+	border-radius: 20px;
+	transition: all 1s;
+}
+
+.form-text-1{
+  font-family: 'Kiwi Maru', serif;
+	font-size: 15px;
+}
+
     </style>
 	
 </head>
@@ -93,33 +133,33 @@
               <h5 class="card-title">客服回饋表單 </h5>
               <form onsubmit="return false" id="form">
                 <div class="form-group">
-                  <label for="email">Email </label>
+                  <label for="email" id="form-text">Email </label>
                   <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
                
                 <div class="form-group row">
-                  <label for="problemOptions" class="col-4 col-form-label">問題種類</label> 
+                  <label for="problemOptions" class="col-4 col-form-label" id="form-text">問題種類</label> 
                   <div class="col-12">
                     <select id="problemOptions" name="problemOptions" class="custom-select">
-                      <option value="瑕疵">瑕疵</option>
-                      <option value="物流">物流</option>
-                      <option value="貨品錯誤">貨品錯誤</option>
-                      <option value="其他">其他</option>
+                      <option value="瑕疵" id="form-text-1">瑕疵</option>
+                      <option value="物流" id="form-text-1">物流</option>
+                      <option value="貨品錯誤" id="form-text-1">貨品錯誤</option>
+                      <option value="其他"id="form-text-1">其他</option>
                     </select>
                   </div>
                 </div> 
                
                 <div class="form-group">
-                  <label for="productName">商品名稱</label>
+                  <label for="productName" id="form-text">商品名稱</label>
                   <input type="productName" class="form-control" id="productName" autocapitalize="off" required placeholder="商品名稱 ">
                 </div>
                 <div class="form-group">
-                  <label for="problem">詳細原因</label>
+                  <label for="problem" id="form-text">詳細原因</label>
                   <input type="problem" class="form-control" id="problem" autocapitalize="off" required placeholder="詳細原因">
                 </div>
                 <div  style="display:none ;" class="alert alert-success" role="alert"  id="success"></div>
                 <div  style="display:none ;" class="alert alert-danger" role="alert"  id="error"></div>
-                <button type="submit" class="btn btn-primary">送出</button>
+                <button type="submit" class="btn ">送出</button>
               </form>
             </div>
           </div>
