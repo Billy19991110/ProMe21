@@ -21,7 +21,7 @@ form.addEventListener('submit', () => {
                 success.style.display = 'block'
                 error.style.display = 'none'
                 success.innerText = data.success
-                setTimeout(function(){location.href="/"} , 1000);   
+                setTimeout(function(){location.href="/login"} , 1000);   
 
                 // error.innerText = JSON.stringify(data)
             }

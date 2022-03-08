@@ -6,7 +6,7 @@ $(function() {
 	});
 
 	function refreshNewsUI() {
-		$(".productMain:odd").addClass("oddColor");
+		$(".productMain:even").addClass("evenColor");
 		var cartHeight = $(".cart").height();
 		var barHeight = $("footer").height();
 		var windowHeight = $(window).height();
@@ -24,10 +24,21 @@ $(function() {
 					url: "/cart",
 					data: buyList[productIndex],
 					success: function() {
-						alert("商品已從購物車刪除");
+						Swal.fire({
+							icon: "info",
+							iconColor: "#89b0ae",
+							color: "#545b6e",
+							title: "商品已從購物車刪除",
+							html: "沒有喜歡的商品?去" + '<a href="todowishingPond">許願池</a>' + "看看",
+							confirmButtonColor: '#545b6e'
+						}).then((result) => {
+							if (result.isConfirmed) {
+								window.location = "/cart";
+							}
+						});
 					},
 					error: function() {
-						alert("NO");
+						console.log("NO");
 					}
 				})
 				.then(function(e) {
@@ -36,7 +47,6 @@ $(function() {
 						refreshNewsUI();
 					});
 				});
-			// window.location = "/cart";
 		});
 		$(".minusButton").on("click", function() {
 			var productIndex = $(this).closest(".oneProduct").index();
@@ -55,7 +65,12 @@ $(function() {
 					});
 				// window.location = "/cart";
 			} else {
-				alert("商品數量不可低於1");
+				Swal.fire({
+					icon: "error",
+					color: "#545b6e",
+					title: "商品數量不可低於1",
+					confirmButtonColor: '#545b6e'
+				});
 			}
 		});
 		$(".plusButton").on("click", function() {
@@ -72,7 +87,7 @@ $(function() {
 						refreshNewsUI();
 					});
 				});
-			// window.location = "/cart";
+			window.location = "/cart";
 		});
 
 	}

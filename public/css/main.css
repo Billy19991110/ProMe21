@@ -15,7 +15,7 @@
 }
 
 /* 商品頁CSS */
-.oddColor {
+.evenColor {
 	background-color: #F0F0F0;
 }
 .cartHeight {
@@ -46,12 +46,12 @@
 	margin: 0.5vh;
 }
 .flex9 {
-	-webkit-flex: 2;
-			flex: 2;
+	-webkit-flex: 1.5;
+			flex: 1.5;
 }
 .flex10 {
-	-webkit-flex: 1;
-			flex: 1;
+	-webkit-flex: 1.5;
+			flex: 1.5;
 }
 .productImg {
 	margin: 1vh;
@@ -75,8 +75,11 @@
 .minusButton > input, .plusButton > input {
 	width: 2vw;
 }
-.deleteButton, .deleteButton:hover {
+.deleteButton {
 	text-decoration: none;
+	color: gray;
+}
+.deleteButton:hover {
 	color: #CD0B0B;
 }
 .button {
@@ -92,22 +95,12 @@
 	text-decoration: none;
 
 }
-.checkoutButton {
-	background-color: #555B6E;
-	color: #FFF;
-	border: 1px #FFF solid;
-}
-.checkoutButton:hover {
-	background-color: #FFF;
-	color: #555B6E;
-	border: 1px #555B6E solid;
-}
-.refuseButton {
+.checkoutButton, .refuseButton {
 	background-color: #FFF;
 	color: #555B6E;		
 	border: 1px #555B6E solid;
 }
-.refuseButton:hover {
+.checkoutButton:hover, .refuseButton:hover {
 	background-color: #555B6E;
 	color: #FFF;		
 	border: 1px #FFF solid;
