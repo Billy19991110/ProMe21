@@ -124,7 +124,7 @@ app.get('/product/:ID', function (req, res) {
 })
 
 app.get('/shopp/:ID', function (req, res) {
-    let sql = "INSERT INTO `buy` (`byID`, `id`, `productID`, `productNUM`) VALUES (NULL, '1', ? , '1') ; \
+    let sql = "INSERT INTO `buy` (`byID`, `id`, `productID`, `productNUM`) VALUES (NULL, '7', ? , '1') ; \
                 SELECT * FROM`product`JOIN `picture` ON`product`.`productID` = `picture`.`productID` \
                 WHERE`product`.`productID` = ? "
     let id = req.params.ID;
@@ -164,8 +164,8 @@ app.get("/cart", function (req, res) {
         });
 });
 app.put("/cart", function (req, res) {
-    conn.query("update buy set productNUM = ? where id = ?",
-        [],
+    conn.query("update buy set productNUM = ? where byID = ?",
+        [req.body.productNUM, req.body.byID],
         function (err, rows) {
             res.send(JSON.stringify(req.body));
         });
@@ -246,8 +246,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileUpload());
 
 
-app.get('/wishList', routes.wishList); 
-app.post('/', routes.wishList); 
+app.get('/wishList', routes.wishList);
+app.post('/', routes.wishList);
 
 app.get('/todowishingPond', function (req, res) {
     connection.query('SELECT * FROM `users_image`',
