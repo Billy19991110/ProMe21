@@ -31,6 +31,10 @@ $(function() {
 							title: "商品已從購物車刪除",
 							html: "沒有喜歡的商品?去" + '<a href="todowishingPond">許願池</a>' + "看看",
 							confirmButtonColor: '#545b6e'
+						}).then((result) => {
+							if (result.isConfirmed) {
+								window.location = "/cart";
+							}
 						});
 					},
 					error: function() {
@@ -43,7 +47,6 @@ $(function() {
 						refreshNewsUI();
 					});
 				});
-			// window.location = "/cart";
 		});
 		$(".minusButton").on("click", function() {
 			var productIndex = $(this).closest(".oneProduct").index();

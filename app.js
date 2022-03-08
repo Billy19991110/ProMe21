@@ -222,6 +222,7 @@ var
 const {
     log
 } = require('console');
+const { compareSync } = require('bcryptjs');
 
 var connection = mysql.createConnection({
     host: 'localhost',
