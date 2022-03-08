@@ -347,7 +347,7 @@ to{bottom: 40px;}
 	width: 200px;
 	height: 300px;
 	margin: 15px;
-	box-shadow: 2px 2px 10px   rgba(0, 0, 0, 0.5);
+	box-shadow: 2px 2px 10px   rgba(110, 108, 110, 0.767);
 	border-radius: 3px;
 }
 
@@ -433,3 +433,21 @@ color: #545b6e;
 	font-size: 3vh;
 	font-family: 'Kaisei Tokumin', serif;
 }
+
+/* =====日韓區版頭===== */
+.jp-pic{
+	width: 85%;
+	height: 600px;
+	display: block;
+	margin: auto;
+	
+}
+.kr-pic{
+	width: 70%;
+	height: 600px;
+	display: block;
+	margin: auto;
+	
+}
+
+
