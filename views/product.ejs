@@ -66,11 +66,12 @@
                 <p><%= Item.Information %></p>
                 <p>價格：<%= Item.productPrice %>元</p>
                 <div >
+                <form method="get" action="/shopp/:ID">
                     <select id="myoption" style="width: 25%; float: left; margin-right: 30px; margin-top: 5px; padding-bottom: 5px;" >
                     <script>
                            // option 選取數量
                         for (var i = 1; i < 99; i++) {
-                            var content = "<option>" + i + "</option>";
+                            var content = "<option value='i' >" + i + "</option>";
                             // console.log(content);
                             document.getElementById("myoption").innerHTML +=content
                         }
@@ -83,6 +84,7 @@
                         <option>5</option>
                         <option>6</option>  -->
                     </select>
+                    </form>
                 </div>
                 <a class="btn btn-primary" href="http://localhost:3000/shopp/<%= Item.productID %>">加入購物車</a>
             </div>
