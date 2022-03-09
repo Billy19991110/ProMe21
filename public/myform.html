@@ -45,11 +45,15 @@
 	font-family: 'Kiwi Maru', serif;
 	font-size: 25px;
 	font-weight: bolder;
+  color: #555b6e;
 }
 #form-text{
   font-family: 'Kiwi Maru', serif;
 	font-size: 20px;
 	font-weight: bolder;
+}
+.form-control:focus{
+  background-color: rgba(190, 227, 219,0.5);
 }
 .card-body{
 	background-color:#f9f9f9 ;
@@ -57,7 +61,7 @@
 	box-shadow: 2px 2px 10px rgba(109, 108, 108, 0.705);
 }
 .btn{
-	background-color: #545b6e;
+	background-color: #555b6e;
 	color: #f9f9f9;
 	font-size: 20px;
   font-family: 'Kiwi Maru', serif;
@@ -65,11 +69,10 @@
 	
 }
 .btn:hover{
-	background-color: #f9f9f9;
+	background-color: #bee3db;
 	color: #555b6e;
-	font-weight: bolder;
-	border-radius: 20px;
-	transition: all 1s;
+
+	
 }
 
 .form-text-1{
@@ -135,8 +138,8 @@
               <h5 class="card-title">客服回饋表單 </h5>
               <form onsubmit="return false" id="form">
                 <div class="form-group">
-                  <label for="email" id="form-text">Email </label>
-                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                  <label for="email" id="form-text">信箱</label>
+                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="請輸入信箱">
                 </div>
                
                 <div class="form-group row">
