@@ -15,10 +15,21 @@ $(function() {
 			$("main").addClass("cartHeight");
 		}
 
+		$("#pay_1").on("click", function() {
+			document.getElementById("adress_1").disabled = false;
+			document.getElementById("adress_2").disabled = true;
+		});
+		$("#pay_2").on("click", function() {
+			document.getElementById("adress_1").disabled = false;
+			document.getElementById("adress_2").disabled = true;
+		});
+		$("#pay_3").on("click", function() {
+			document.getElementById("adress_1").disabled = true;
+			document.getElementById("adress_2").disabled = false;
+		});
+
 		$(".deleteButton").on("click", function() {
 			var productIndex = $(this).closest(".oneProduct").index();
-			// console.log(productIndex);
-			// console.log(buyList[productIndex]);
 			$.ajax({
 					type: "delete",
 					url: "/cart",
