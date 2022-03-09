@@ -63,7 +63,7 @@ $(function() {
 							refreshNewsUI();
 						});
 					});
-				// window.location = "/cart";
+				window.location = "/cart";
 			} else {
 				Swal.fire({
 					icon: "error",
