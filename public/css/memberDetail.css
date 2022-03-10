@@ -1,0 +1,39 @@
+a,
+a:hover,
+a:focus {
+	text-decoration: none;
+}
+.logintext {
+	font-family: 'Kiwi Maru', serif;
+	font-size: 20px;
+	font-weight: bolder;
+}	
+
+.card-title {
+	font-family: 'Kiwi Maru', serif;
+	font-size: 25px;
+	font-weight: bolder;
+	color: #545b6e;
+}
+.card-body {
+	background-color: #f9f9f9;
+	opacity: 0.7;
+	box-shadow: 2px 2px 10px rgba(109, 108, 108, 0.705);
+}
+
+.form-control:focus {
+	background-color: rgba(190, 227, 219, 0.5);
+}
+
+.btn {
+	background-color: #545b6e;
+	color: #f9f9f9;
+	font-size: 20px;
+	font-family: 'Kiwi Maru', serif;
+	font-weight: bolder;
+}
+.btn:hover {
+	background-color: #89b0ae;
+	color: #545b6e;
+	transition: all 1s;
+}

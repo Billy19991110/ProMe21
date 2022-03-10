@@ -1,12 +1,7 @@
-
-
-
-
 <!-- 許願池 demo 2022 03 01 09:47 -->
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,89 +31,84 @@
         <script defer="" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <link href="/css/index.css" rel="stylesheet" type="text/css">
         <title>Dai GOAT</title>
-<style>
+    <style>
 
-img{
-    max-height: 300px;
-}
+        img{
+            max-height: 300px;
+        }
 
 
-th{
-    width: 200px;
-}
+        th{
+            width: 200px;
+        }
 
-a, a:hover, a:focus {
-    text-decoration: none;
-}
+        a, a:hover, a:focus {
+            text-decoration: none;
+        }
 
-</style>
+    </style>
 </head>
 <body>
     <%- include("header.ejs") %>
     
-<!-- ====== 匯入許願池項目 ===== -->
+    <!-- ====== 匯入許願池項目 ===== -->
         
     <div class="container col-md-8 col-md-offset-2 ">
         <div class="container col-md-8 col-md-offset-2 " id="myoption">
-    <% for ( var result of result ) { %>
+            <% for ( var result of result ) { %>
         
-        <table class="table ">
-            <thead>
-            <tr>
-                <th scope="col" class="table-primary">商品名稱</th>
-                <th  class="table-primary" scope="col" colspan="3"><%= result.productName %></th>
-            </tr>
-            <tr>
-                <th scope="col">問題種類</th>
-                <th scope="col" colspan="3"><%= result.problemOptions %></th>
-            </tr>
-            <tr>
-                <th scope="col">說明</th>
-                <th scope="col" colspan="3"><%= result.problem %></th>
-            </tr>
-            </thead>
-        </table>
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th scope="col" class="table-primary">商品名稱</th>
+                        <th  class="table-primary" scope="col" colspan="3"><%= result.productName %></th>
+                    </tr>
+                    <tr>
+                        <th scope="col">問題種類</th>
+                        <th scope="col" colspan="3"><%= result.problemOptions %></th>
+                    </tr>
+                    <tr>
+                        <th scope="col">說明</th>
+                        <th scope="col" colspan="3"><%= result.problem %></th>
+                    </tr>
+                </thead>
+            </table>
 
-        <!-- <div class="col-lg-4 mb-4">
-            <a href="" style="text-decoration: none; color: black;" >
-            <div class="card wish-card">
-            <img  src="http://localhost:3000/images/upload_images/<%= result.image %>" alt="" class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title"><%= result.email %></h5>
-            </div>
-            </div>
-            </a>
-            </div> -->
+            <!-- <div class="col-lg-4 mb-4">
+                <a href="" style="text-decoration: none; color: black;" >
+                <div class="card wish-card">
+                <img  src="http://localhost:3000/images/upload_images/<%= result.image %>" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title"><%= result.email %></h5>
+                </div>
+                </div>
+                </a>
+                </div> -->
 
-    <% } %>
-
-    </div>
-<!-- ====== 匯入許願池項目 ===== -->
-
-
-
-    <!-- <div class="col-md-4"><img src="/素材圖片/商品圖/推巾/2018感謝祭.jpg" alt=""><h2>商品1</h2></div>
-            <div class="col-md-4"><img src="/素材圖片/商品圖/推巾/2019全國tour.jpg" alt=""><h2>商品2</h2></div>
-            <div class="col-md-4"><img src="/素材圖片/商品圖/推巾/2019春con.jpg" alt=""><h2>商品3</h2></div>
-
-            <div class="col-md-4"><img src="/素材圖片/商品圖/衣服/15周年單獨con.jpg" alt=""><h2>商品1</h2></div>
-            <div class="col-md-4"><img src="/素材圖片/商品圖/衣服/2018單獨con_正.jpg" alt=""><h2>商品2</h2></div>
-            <div class="col-md-4"><img src="/素材圖片/商品圖/衣服/2019全國tour.jpg" alt=""><h2>商品3</h2></div>
-
-            <div class="col-md-4"><img src="/素材圖片/商品圖/推扇/STU2021聖誕推扇_1.jpg" alt=""><h2>商品1</h2></div>
-            <div class="col-md-4"><img src="/素材圖片/商品圖/推扇/STU2021聖誕推扇_4.jpg" alt=""><h2>商品2</h2></div>
-            <div class="col-md-4"><img src="/素材圖片/商品圖/推扇/STU大正個人推扇_1.jpg" alt=""><h2>商品3</h2></div> -->
-            
+            <% } %>
 
         </div>
-    </div>
+        <!-- ====== 匯入許願池項目 ===== -->
 
-    
-    </main>
-</div>  
-<div class="fixed-bottom">
-<%- include("footer.ejs") %>
-</div>
+
+
+        <!-- <div class="col-md-4"><img src="/素材圖片/商品圖/推巾/2018感謝祭.jpg" alt=""><h2>商品1</h2></div>
+                <div class="col-md-4"><img src="/素材圖片/商品圖/推巾/2019全國tour.jpg" alt=""><h2>商品2</h2></div>
+                <div class="col-md-4"><img src="/素材圖片/商品圖/推巾/2019春con.jpg" alt=""><h2>商品3</h2></div>
+
+                <div class="col-md-4"><img src="/素材圖片/商品圖/衣服/15周年單獨con.jpg" alt=""><h2>商品1</h2></div>
+                <div class="col-md-4"><img src="/素材圖片/商品圖/衣服/2018單獨con_正.jpg" alt=""><h2>商品2</h2></div>
+                <div class="col-md-4"><img src="/素材圖片/商品圖/衣服/2019全國tour.jpg" alt=""><h2>商品3</h2></div>
+
+                <div class="col-md-4"><img src="/素材圖片/商品圖/推扇/STU2021聖誕推扇_1.jpg" alt=""><h2>商品1</h2></div>
+                <div class="col-md-4"><img src="/素材圖片/商品圖/推扇/STU2021聖誕推扇_4.jpg" alt=""><h2>商品2</h2></div>
+                <div class="col-md-4"><img src="/素材圖片/商品圖/推扇/STU大正個人推扇_1.jpg" alt=""><h2>商品3</h2></div> -->
+                
+
+    </div>
+    <div class="fixed-bottom">
+        <%- include("footer.ejs") %>
+    </div>
 
 </body>
 

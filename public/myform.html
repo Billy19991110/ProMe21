@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,9 +37,7 @@
 	<link href="/css/index.css" rel="stylesheet" type="text/css">
 	<title>Dai GOAT</title>
 	<style>
-		a,
-		a:hover,
-		a:focus {
+		a, a:hover, a:focus {
 			text-decoration: none;
 		}
 
@@ -79,55 +76,12 @@
 		.btn:hover {
 			background-color: #bee3db;
 			color: #555b6e;
-
-
 		}
-
-		<style>a,
-		a:hover,
-		a:focus {
-			text-decoration: none;
-		}
-
-		.card-title {
-			font-family: 'Kiwi Maru', serif;
-			font-size: 25px;
-			font-weight: bolder;
-		}
-
-		#form-text {
-			font-family: 'Kiwi Maru', serif;
-			font-size: 20px;
-			font-weight: bolder;
-		}
-
-		.card-body {
-			background-color: #f9f9f9;
-			opacity: 0.7;
-			box-shadow: 2px 2px 10px rgba(109, 108, 108, 0.705);
-		}
-
-		.btn {
-			background-color: #545b6e;
-			color: #f9f9f9;
-			font-size: 20px;
-			font-family: 'Kiwi Maru', serif;
-			font-weight: bolder;
-
-		}
-
-		.btn:hover {
-			background-color: #f9f9f9;
-			color: #555b6e;
-			font-weight: bolder;
-			border-radius: 20px;
-			transition: all 1s;
-		}
-
 		.form-text-1 {
 			font-family: 'Kiwi Maru', serif;
 			font-size: 15px;
 		}
+		
 	</style>
 
 </head>
@@ -177,9 +131,6 @@
 			</div>
 		</div>
 	</header>
-
-
-
 	<!-- ===== header ===== -->
 
 	<div class='container my-5'>
@@ -188,11 +139,9 @@
 				<h5 class="card-title">客服回饋表單 </h5>
 				<form onsubmit="return false" id="form">
 					<div class="form-group">
-						<label for="email" id="form-text">信箱 </label>
-						<input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-							placeholder="您的信箱">
+						<label for="email" id="form-text">信箱</label>
+						<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="請輸入信箱">
 					</div>
-
 					<div class="form-group row">
 						<label for="problemOptions" class="col-4 col-form-label" id="form-text">問題種類</label>
 						<div class="col-12">
@@ -202,72 +151,41 @@
 								<option value="貨品錯誤" id="form-text-1">貨品錯誤</option>
 								<option value="其他" id="form-text-1">其他</option>
 							</select>
-							<div class='container my-5'>
-								<div class="card" style="width: 100%;">
-									<div class="card-body">
-										<h5 class="card-title">客服回饋表單 </h5>
-										<form onsubmit="return false" id="form">
-											<div class="form-group">
-												<label for="email" id="form-text">信箱</label>
-												<input type="email" class="form-control" id="email"
-													aria-describedby="emailHelp" placeholder="請輸入信箱">
-											</div>
-
-											<div class="form-group row">
-												<label for="problemOptions" class="col-4 col-form-label"
-													id="form-text">問題種類</label>
-												<div class="col-12">
-													<select id="problemOptions" name="problemOptions"
-														class="custom-select">
-														<option value="瑕疵" id="form-text-1">瑕疵</option>
-														<option value="物流" id="form-text-1">物流</option>
-														<option value="貨品錯誤" id="form-text-1">貨品錯誤</option>
-														<option value="其他" id="form-text-1">其他</option>
-													</select>
-												</div>
-											</div>
-
-											<div class="form-group">
-												<label for="productName" id="form-text">商品名稱</label>
-												<input type="productName" class="form-control" id="productName"
-													autocapitalize="off" required placeholder="商品名稱 ">
-											</div>
-											<div class="form-group">
-												<label for="problem" id="form-text">詳細原因</label>
-												<input type="problem" class="form-control" id="problem"
-													autocapitalize="off" required placeholder="詳細原因">
-											</div>
-											<div style="display:none ;" class="alert alert-success" role="alert"
-												id="success"></div>
-											<div style="display:none ;" class="alert alert-danger" role="alert"
-												id="error"></div>
-											<button type="submit" class="btn ">送出</button>
-										</form>
-									</div>
-								</div>
-
-
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="productName" id="form-text">商品名稱</label>
+						<input type="productName" class="form-control" id="productName" autocapitalize="off" required placeholder="商品名稱 ">
+					</div>
+					<div class="form-group">
+						<label for="problem" id="form-text">詳細原因</label>
+						<input type="problem" class="form-control" id="problem" autocapitalize="off" required placeholder="詳細原因">
+					</div>
+					<div style="display:none ;" class="alert alert-success" role="alert" id="success"></div>
+					<div style="display:none ;" class="alert alert-danger" role="alert" id="error"></div>
+					<button type="submit" class="btn ">送出</button>
 				</form>
 			</div>
 		</div>
 	</div>
+
+	<footer class="fixed-bottom">
+		<div class="container-fluid hidden-sm hidden-md hidden-xs"></div>
+		<div class="footer flexcenter">
+			<div>
+				<ul class="footerlist">
+					<li class="footeritem">
+						<a href="">關於我們</a>
+					</li>
+					<li class="footeritem">
+						<a href="">聯絡我們</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</footer>
 	<script src="./js/myform.js"></script>
 </body>
-<footer class="fixed-bottom">
-	<div class="container-fluid hidden-sm hidden-md hidden-xs"></div>
-	<div class="footer flexcenter">
-		<div>
-			<ul class="footerlist">
-				<li class="footeritem">
-					<a href="">關於我們</a>
-				</li>
-				<li class="footeritem">
-					<a href="">聯絡我們</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-</footer>
 
 </html>
 
