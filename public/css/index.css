@@ -154,8 +154,10 @@ body {
 /* banner */
 
 .Flex-container-banner {
-	display: flex;
-	justify-content: center;
+	margin: 0px auto;
+	width: 1000px;
+	height: 550px;
+
 }
 
 /* 商品輪播 */
@@ -246,28 +248,30 @@ body {
 
 .news-inner{
 	text-align: center;
-	height: 40px;
-	max-height: 20px;
+	height: 80px;
+	width: 100%;
+	max-height: 30px;
 	overflow: hidden;
 	margin-top: -45px;
 }
 
 
 .news-pic{
-	height: 60px;
-	width: 100px;
+	height: 80px;
+	width: 120px;
 	
 }
 .news-pic img{
-	height: 65px;
-	width: 120px;
+	height: 80px;
+	width: 140px;
 	float: left;
 	
 }
 
 
 .news-text1{
-	position: relative;
+position: relative;
+font-size: 20px;
 animation: change 3s ;
 -webkit-animation: change 3s ;
 animation-direction: alternate;
@@ -280,17 +284,18 @@ animation-iteration-count: infinite;
 
 @keyframes change{
 	from{top: 0px;}
-	to{top: 25px;}
+	to{top: 50px;}
 }
 @-webkit-keyframes change{
 	from{top: 0px;}
-	to{top: 25px;
+	to{top: 50px;
 
 	}
 }
 
 .news-text2{
 	position: relative;
+	font-size: 20px;
 	animation: change2 3s ;
 	-webkit-animation: change2 3s ;
 	animation-direction: alternate;
@@ -431,7 +436,9 @@ color: #545b6e;
 
 .areaTitle span{
 	font-size: 3vh;
-	font-family: 'Kaisei Tokumin', serif;
+	color: #545b6e;
+	font-family: 'Kiwi Maru', serif;
+	border-bottom: 10px solid #89b0ae;
 }
 
 /* =====日韓區版頭===== */
@@ -451,3 +458,26 @@ color: #545b6e;
 }
 
 
+.page-link{
+	font-family: 'Kiwi Maru', serif;
+	color: #545b6e;
+	font-weight: bold;
+	
+
+}
+#page-link-n{
+	border-radius: 999em;
+	border: 3px solid #545b6e;
+	margin: 1vh;
+}
+#page-link-n:hover{
+	border: 3px solid #89b0ae;
+	background-color: #bee3db;
+	color:#545b6e ;
+
+}
+
+.btn-n{
+	font-family: 'Kiwi Maru', serif;
+	color: #545b6e;
+}

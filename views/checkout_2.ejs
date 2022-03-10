@@ -8,35 +8,31 @@
 <body>
 	<%- include("header.ejs") %>
 	<main class="container cart">
-		<div class="card" style="width: 100%;">
+		<div class="card">
 			<div class="card-body">
 				<h5 class="card-title">結帳資料</h5>
 				<div class="form-group">
-					<label>姓名：</label>
+					<label>姓名</label>
 					<input type="text" name="user" class="form-control">
 				</div>
 				<div>
 					<label>付款方式:</label>
 				</div>
 				<div class="form-group">
-					&nbsp&nbsp<label><input type="radio" name="pay">貨到付款</label>
+					<label><input type="radio" name="pay" id="pay_1">貨到付款</label>&nbsp&nbsp
+					<label><input type="radio" name="pay" id="pay_2">信用卡付款</label>&nbsp&nbsp
+					<label><input type="radio" name="pay" id="pay_3">超商取貨付款</label>
 				</div>
 				<div class="form-group">
-					&nbsp&nbsp<label><input type="radio" name="pay">信用卡付款</label>
+					<label>地址</label>
+					<input type="text" name="adress" class="form-control" id="adress_1" disabled>
 				</div>
 				<div class="form-group">
-					&nbsp&nbsp<label><input type="radio" name="pay">超商取貨付款</label>
+					<label>取貨超商</label>
+					<input type="text" name="adress" class="form-control" id="adress_2" disabled>
 				</div>
 				<div class="form-group">
-					<label>地址：</label>
-					<input type="text" name="adress" class="form-control">
-				</div>
-				<div class="form-group">
-					<label>取貨超商：</label>
-					<input type="text" name="adress" class="form-control">
-				</div>
-				<div class="form-group">
-					<label>電話：</label>
+					<label>電話</label>
 					<input type="text" name="phonenum" class="form-control">
 				</div>
 				<br>

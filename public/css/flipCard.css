@@ -1,0 +1,70 @@
+/* *{
+	border: 1px solid lightcoral;
+} */
+
+.cart {	
+	height: calc(100vh - 193.58px);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	perspective: 1000px;
+}
+.cardAlign {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	gap: 2vh;
+	grid-column-start: 1;
+	grid-column-end: -1;
+	margin: 1vh;
+	justify-content: center;
+	padding: 2vh;
+	width: 70vh;
+}
+
+.cards {
+	height: 22vh;
+	width: 15vh;
+	position: relative;
+	transform: scale(1);
+	transform-style: preserve-3d;
+	transition: ease-in-out transform .5s;
+}
+.cards:hover {
+	transform: scale(1.03);
+}
+.cards.flip {
+	transform: rotateY(180deg);
+}
+
+.front, .back {
+	height: 100%;
+	width: 100%;
+	border-radius: 10%;
+	border: #89b0ae solid 1px;
+	position: absolute;
+	backface-visibility: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.front {
+	transform: rotateY(180deg);
+	background-color: #FFF;
+}
+.back {
+	background-color: #89b0ae;
+}
+.cards > div > .back-face {
+	width: calc(208px * 0.35);
+	height: calc(246px * 0.35);
+}
+.cards > div > .front-face {
+	width: calc(595px * 0.16);
+	height: calc(842px * 0.16);
+}
+.text{
+	font-family: 'Kaisei Tokumin';
+	font-weight: bold;
+	color: #545b6e;
+}

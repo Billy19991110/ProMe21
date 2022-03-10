@@ -41,43 +41,122 @@
 		}
 	</style>
 
+	<style>
+		a,
+		a:hover,
+		a:focus {
+			text-decoration: none;
+		}
+
+		.card-body {
+			background-color: #f9f9f9;
+			opacity: 0.7;
+			box-shadow: 2px 2px 10px rgba(109, 108, 108, 0.705);
+		}
+	</style>
+
 </head>
 
 <body>
 	<!-- ===== header ===== -->
 	<header>
-		<div class="container-fluid hidden-sm hidden-md hidden-xs"></div>
-		<div class="header flexcenter">
-			<div class="floatL">
-				<a href="http://localhost:3000">
-					<a href="/">
-						<img src="/icon/logo-white.png" class="logo-pic">
+		<!-- ===== header ===== -->
+		<header>
+			<div class="container-fluid hidden-sm hidden-md hidden-xs"></div>
+			<div class="header flexcenter">
+				<div class="floatL">
+					<a href="http://localhost:3000">
+						<a href="/">
+							<img src="/icon/logo-white.png" class="logo-pic">
+						</a>
+				</div>
+				<div class="floatR">
+					<a href="/login" class="icon-box">
+						<img src="/icon/user.png" class="icon-pic">
 					</a>
-			</div>
-			<div class="floatR">
-				<a href="/login" class="icon-box">
-					<img src="/icon/user.png" class="icon-pic">
-				</a>
-				<a href="http://localhost:3000/cart" class="icon-box">
-					<img src="/icon/cart.png" class="icon-pic">
-				</a>
+					<a href="http://localhost:3000/cart" class="icon-box">
+						<img src="/icon/cart.png" class="icon-pic">
+					</a>
 
 
+				</div>
+				<div>
+					<ul class="item-bar">
+						<li class="itemlist">
+							<a href="http://localhost:3000/japan/page1">日本專區</a>
+						</li>
+						<li class="itemlist">
+							<a href="http://localhost:3000/korea/page1">韓國專區</a>
+						</li>
+						<li class="itemlist">
+							<a href="/todowishingPond">許願池</a>
+						</li>
+					</ul>
+				</div>
 			</div>
-			<div>
-				<ul class="item-bar">
-					<li class="itemlist">
-						<a href="http://localhost:3000/japan/page1">日本專區</a>
-					</li>
-					<li class="itemlist">
-						<a href="http://localhost:3000/korea/page1">韓國專區</a>
-					</li>
-					<li class="itemlist">
-						<a href="/todowishingPond">許願池</a>
-					</li>
-				</ul>
+		</header>
+
+
+
+		<!-- ===== header ===== -->
+
+		<div class='container my-5'>
+			<div class="card" style="width: 100%;">
+				<div class="card-body">
+					<h5 class="card-title">註冊 </h5>
+					<form onsubmit="return false" id="form">
+						<div class="form-group">
+							<label for="email">請輸入帳號</label>
+							<input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+								placeholder="請輸入帳號">
+						</div>
+						<div class="form-group">
+							<label for="password">請輸入密碼</label>
+							<input type="password" class="form-control" id="password" autocapitalize="off" required
+								placeholder="請輸入密碼">
+						</div>
+						<div style="display:none ;" class="alert alert-success" role="alert" id="success"></div>
+						<div style="display:none ;" class="alert alert-danger" role="alert" id="error"></div>
+						<button type="submit" class="btn btn-primary">Register</button>
+					</form>
+				</div>
 			</div>
 		</div>
+		<script src="js/register.js"></script>
+</body>
+<footer class="fixed-bottom">
+	<div class="container-fluid hidden-sm hidden-md hidden-xs"></div>
+	<div class="header flexcenter">
+		<div class="floatL">
+			<a href="http://localhost:3000">
+				<a href="/">
+					<img src="/icon/logo-white.png" class="logo-pic">
+				</a>
+		</div>
+		<div class="floatR">
+			<a href="/login" class="icon-box">
+				<img src="/icon/user.png" class="icon-pic">
+			</a>
+			<a href="http://localhost:3000/cart" class="icon-box">
+				<img src="/icon/cart.png" class="icon-pic">
+			</a>
+
+
+		</div>
+		<div>
+			<ul class="item-bar">
+				<li class="itemlist">
+					<a href="http://localhost:3000/japan/page1">日本專區</a>
+				</li>
+				<li class="itemlist">
+					<a href="http://localhost:3000/korea/page1">韓國專區</a>
+				</li>
+				<li class="itemlist">
+					<a href="/todowishingPond">許願池</a>
+				</li>
+			</ul>
+		</div>
+	</div>
 	</header>
 
 
@@ -107,21 +186,21 @@
 		</div>
 	</div>
 	<script src="js/register.js"></script>
-</body>
-<footer class="fixed-bottom">
-	<div class="container-fluid hidden-sm hidden-md hidden-xs"></div>
-	<div class="footer flexcenter">
-		<div>
-			<ul class="footerlist">
-				<li class="footeritem">
-					<a href="">關於我們</a>
-				</li>
-				<li class="footeritem">
-					<a href="">聯絡我們</a>
-				</li>
-			</ul>
+	</body>
+	<footer class="fixed-bottom">
+		<div class="container-fluid hidden-sm hidden-md hidden-xs"></div>
+		<div class="footer flexcenter">
+			<div>
+				<ul class="footerlist">
+					<li class="footeritem">
+						<a href="">關於我們</a>
+					</li>
+					<li class="footeritem">
+						<a href="">聯絡我們</a>
+					</li>
+				</ul>
+			</div>
 		</div>
-	</div>
-</footer>
+	</footer>
 
 </html>
