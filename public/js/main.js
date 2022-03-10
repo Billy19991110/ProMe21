@@ -1,33 +1,24 @@
 $(function() {
 
+	// 資料庫資料
 	$.get("/data", function(e) {
 		buyList = JSON.parse(e);
 		refreshNewsUI();
 	});
 
+	// 網頁高度調整
+	var cartHeight = $(".cart").height();
+	var barHeight = $("footer").height();
+	var windowHeight = $(window).height();
+	var Height = windowHeight - (barHeight * 2);
+	if (cartHeight < Height) {
+		$("main").addClass("cartHeight");
+	}
+
+	// 購物車
+	$(".productMain:even").addClass("evenColor");
+
 	function refreshNewsUI() {
-		$(".productMain:even").addClass("evenColor");
-		var cartHeight = $(".cart").height();
-		var barHeight = $("footer").height();
-		var windowHeight = $(window).height();
-		var Height = windowHeight - (barHeight * 2);
-		if (cartHeight < Height) {
-			$("main").addClass("cartHeight");
-		}
-
-		$("#pay_1").on("click", function() {
-			document.getElementById("adress_1").disabled = false;
-			document.getElementById("adress_2").disabled = true;
-		});
-		$("#pay_2").on("click", function() {
-			document.getElementById("adress_1").disabled = false;
-			document.getElementById("adress_2").disabled = true;
-		});
-		$("#pay_3").on("click", function() {
-			document.getElementById("adress_1").disabled = true;
-			document.getElementById("adress_2").disabled = false;
-		});
-
 		$(".deleteButton").on("click", function() {
 			var productIndex = $(this).closest(".oneProduct").index();
 			$.ajax({
@@ -100,6 +91,19 @@ $(function() {
 				});
 			window.location = "/cart";
 		});
-
 	}
+
+	// 結帳資料
+	$("#pay_1").on("click", function() {
+		document.getElementById("adress_1").disabled = false;
+		document.getElementById("adress_2").disabled = true;
+	});
+	$("#pay_2").on("click", function() {
+		document.getElementById("adress_1").disabled = false;
+		document.getElementById("adress_2").disabled = true;
+	});
+	$("#pay_3").on("click", function() {
+		document.getElementById("adress_1").disabled = true;
+		document.getElementById("adress_2").disabled = false;
+	});
 });
