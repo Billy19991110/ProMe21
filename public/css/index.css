@@ -483,3 +483,8 @@ color: #545b6e;
 	font-family: 'Kiwi Maru', serif;
 	color: #545b6e;
 }
+
+.card-text {
+	text-decoration: none;
+	color: black;
+}

@@ -3,6 +3,7 @@
 <head>
     <%- include("import.ejs") %>    
     <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
     <link rel="stylesheet" type="text/css" href="/css/memberDetail.css">
     <!-- =====animate===== -->
     <!-- Animate.css v3.5.2 -->
@@ -55,69 +56,74 @@
     </header>
     <!-- ========== header ========= -->
 
-    <div class="container col-sm-12" id="mainform">
-        <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                                     
-            <div class="panel panel-info"  >
-                <div class="panel-heading">
-                </div> 
-                <div class="panel-body">
-                    <form  class="form-horizontal" role="form" method="post" action="/" enctype="multipart/form-data">
-                        <% if (message.length > 0) { %>
-                            <div class="alert alert-success col-sm-12"><%= message %></div>
-                        <% } %>
-                        <div id="signupalert" style="display:none" class="alert alert-danger">
-                            <p>Error:</p>
-                            <span></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="col-md-3 control-label" id="form-text">信箱</label>
-                            <div class="col-md-9">
-                                <input type="text" class="form-control" name="email" placeholder="請輸入信箱">
+    <main class="cart">
+        <div class="container col-sm-12" id="mainform">
+            <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                                     
+                <div class="panel panel-info"  >
+                    <div class="panel-heading">
+                    </div> 
+                    <div class="panel-body">
+                        <form  class="form-horizontal" role="form" method="post" action="/" enctype="multipart/form-data">
+                            <% if (message.length > 0) { %>
+                                <div class="alert alert-success col-sm-12"><%= message %></div>
+                            <% } %>
+                            <div id="signupalert" style="display:none" class="alert alert-danger">
+                                <p>Error:</p>
+                                <span></span>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="name" class="col-md-3 control-label" id="form-text">會員名稱</label>
-                            <div class="col-md-9">
-                                <input type="text" class="form-control" name="name" placeholder="請輸入名稱">
+                            <div class="form-group">
+                                <label for="email" class="col-md-3 control-label" id="form-text">信箱</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="email" placeholder="請輸入信箱">
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="uploaded_image" class="col-md-3 control-label" id="form-text">商品圖案</label>
-                            <div class="col-sm-9">
-                                <input class="form-control" type="file" name="uploaded_image" accept=""/>
+                            <div class="form-group">
+                                <label for="name" class="col-md-3 control-label" id="form-text">姓名</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="name" placeholder="請輸入姓名">
+                                </div>
                             </div>
-                        </div>                                
-                        <div class="form-group">
-                            <label for="commodity_name" class="col-md-3 control-label" id="form-text">商品名稱</label>
-                            <div class="col-md-9">
-                                <input type="text" class="form-control" name="commodity_name" placeholder="請輸入商品名稱">
+                            
+                            <div class="form-group">
+                                <label for="uploaded_image" class="col-md-3 control-label" id="form-text">商品圖案</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" type="file" name="uploaded_image" accept=""/>
+                                </div>
+                            </div>                                
+                            <div class="form-group">
+                                <label for="commodity_name" class="col-md-3 control-label" id="form-text">商品名稱</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="commodity_name" placeholder="請輸入商品名稱">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="Product_Description" class="col-md-3 control-label" id="form-text">商品說明</label>
-                            <div class="col-md-9">
-                                <input type="text" class="form-control" name="Product_Description" placeholder="請輸入商品說明">
+                            <div class="form-group">
+                                <label for="Product_Description" class="col-md-3 control-label" id="form-text">商品說明</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="Product_Description" placeholder="請輸入商品說明">
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <!-- Button -->                                       
-                            <div class="col-md-offset-3 col-md-9">
-                                <button id="btn-signup" type="submit" class="btn">送出</button>
-                            </div>
-                        </div>  
-                    </form>
+                            
+                            <div class="form-group">
+                                <!-- Button -->                                       
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button id="btn-signup" type="submit" class="btn">送出</button>
+                                </div>
+                            </div>  
+                        </form>
 
-                    
+                        
+                    </div>
                 </div>
             </div>
+            <div class="wish-box">
+    			<img src="/banner/make a wish.png" alt="" >
+            </div>
         </div>
-        <div class="wish-box">
-			<img src="/banner/make a wish.png" alt="" >
-        </div>
-    </div>
+    </main>
 
     <%- include("footer.ejs") %>
+
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>

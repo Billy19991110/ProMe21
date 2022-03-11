@@ -1,8 +1,8 @@
-/* *{
+	/* *{
 	border: 1px solid lightcoral;
 } */
 
-.cart {	
+.game {	
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
