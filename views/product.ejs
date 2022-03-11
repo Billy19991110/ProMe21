@@ -3,6 +3,8 @@
 <head>
     <%- include("import.ejs") %>
     <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- <script type="text/javascript" src="/js/demo.js"></script> -->
     <style>
         .pic img{transform:scale(1,1);transition: all 1s ease-out;}
         .pic img:hover{transform:scale(1.2,1.2);}
@@ -86,7 +88,17 @@
                     </select>
                     </form>
                 </div>
-                <a class="btn" href="http://localhost:3000/shopp/<%= Item.productID %>">加入購物車</a>
+                <a id="demo1" class="btn">加入購物車</a>
+                <script>
+                    $(function () {
+                        document.getElementById("demo1").addEventListener("click", function () {
+                            swal("已加入購物車!", "祝您購物愉快>.<", "success");
+                            $('button:contains("OK")').click(function () {
+                                location.href = "http://localhost:3000/shopp/<%= Item.productID %>"
+                            })
+                        })
+                    });
+                </script>
             </div>
         </div>
         <!-- Call to Action-->
