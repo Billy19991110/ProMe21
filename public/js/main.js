@@ -106,4 +106,17 @@ $(function() {
 		document.getElementById("adress_1").disabled = true;
 		document.getElementById("adress_2").disabled = false;
 	});
+	$("#listSend").on("click", function() {
+		Swal.fire({
+			imageUrl: "/icon/goat.png",
+			imageWidth: 199.5,
+			imageHeight: 186,
+			title: "前往獎勵小遊戲",
+			text: "3秒後自動前往",
+			showConfirmButton: false,
+			timer: 3000
+		}).then((result) => {
+			window.location = "/flipCard";
+		});
+	});
 });

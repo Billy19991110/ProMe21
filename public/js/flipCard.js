@@ -23,54 +23,57 @@ function saleType() {
 	let sale = flipped_1.dataset.picture;
 	if (sale === "sale_1") {
 		Swal.fire({
-			imageUrl: "/icon/logo-black.png",
-			imageWidth: 208,
-			imageHeight: 246,
+			imageUrl: "/icon/sale_1.png",
+			imageWidth: 178.5,
+			imageHeight: 252.6,
 			title: "恭喜獲得八折優惠！",
+			text: "可於下次購物時使用",
 			confirmButtonColor: '#545b6e',
-			confirmButtonText: "前往結帳"
+			confirmButtonText: "結束結帳"
 		}).then((result) => {
 			if (result.isConfirmed) {
-				window.location = "/checkout_2";
+				window.location = "/checkout";
 			}
 		});
 	} else if (sale === "sale_2") {
 		Swal.fire({
-			imageUrl: "/icon/logo-black.png",
-			imageWidth: 208,
-			imageHeight: 246,
+			imageUrl: "/icon/sale_2.png",
+			imageWidth: 178.5,
+			imageHeight: 252.6,
 			title: "恭喜獲得免運優惠！",
+			text: "可於下次購物時使用",
 			confirmButtonColor: '#545b6e',
-			confirmButtonText: "前往結帳"
+			confirmButtonText: "結束結帳"
 		}).then((result) => {
 			if (result.isConfirmed) {
-				window.location = "/checkout_2";
+				window.location = "/checkout";
 			}
 		});
 	} else if (sale === "sale_3") {
 		Swal.fire({
-			imageUrl: "/icon/logo-black.png",
-			imageWidth: 208,
-			imageHeight: 246,
+			imageUrl: "/icon/sale_3.png",
+			imageWidth: 178.5,
+			imageHeight: 252.6,
 			title: "恭喜獲得折價三百！",
+			text: "可於下次購物時使用",
 			confirmButtonColor: '#545b6e',
-			confirmButtonText: "前往結帳"
+			confirmButtonText: "結束結帳"
 		}).then((result) => {
 			if (result.isConfirmed) {
-				window.location = "/checkout_2";
+				window.location = "/checkout";
 			}
 		});
 	} else {
 		Swal.fire({
-			imageUrl: "/icon/goat.png",
-			imageWidth: 199.5,
-			imageHeight: 186,
+			imageUrl: "/icon/sale_4.png",
+			imageWidth: 178.5,
+			imageHeight: 252.6,
 			title: "銘謝惠顧",
 			confirmButtonColor: '#545b6e',
-			confirmButtonText: "前往結帳"
+			confirmButtonText: "結束結帳"
 		}).then((result) => {
 			if (result.isConfirmed) {
-				window.location = "/checkout_2";
+				window.location = "/checkout";
 			}
 		});
 	}

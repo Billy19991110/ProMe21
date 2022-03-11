@@ -37,3 +37,11 @@ a:focus {
 	color: #545b6e;
 	transition: all 1s;
 }
+
+/* wihList */
+#form-text{
+    font-family: 'Kiwi Maru', serif;
+    font-size: 20px;
+    font-weight: bolder;
+	color: #545b6e;
+}

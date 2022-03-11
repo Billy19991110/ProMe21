@@ -3,37 +3,11 @@
 <head>
     <%- include("import.ejs") %>    
     <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/memberDetail.css">
     <!-- =====animate===== -->
     <!-- Animate.css v3.5.2 -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"  />
-
-    <style>
-        a, a:hover, a:focus {
-        text-decoration: none;
-        }
-        #form-text{
-        font-family: 'Kiwi Maru', serif;
-        font-size: 20px;
-        font-weight: bolder;
-        }
-        .form-control:focus{
-        background-color: rgba(190, 227, 219,0.5);
-        }
-        .btn{
-        background-color: #555b6e;
-        color: #f9f9f9;
-        font-size: 20px;
-        font-family: 'Kiwi Maru', serif;
-        font-weight: bolder;
-
-        }
-        .btn:hover{
-        background-color: #bee3db;
-        color: #555b6e;
-        }
-    </style>
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"  /> -->
 </head>
-
 <body>
     
     <!-- ========== header ========= -->
@@ -79,7 +53,6 @@
         </div>
         </div>
     </header>
-    
     <!-- ========== header ========= -->
 
     <div class="container col-sm-12" id="mainform">
@@ -99,13 +72,13 @@
                         <div class="form-group">
                             <label for="email" class="col-md-3 control-label" id="form-text">信箱</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="email" placeholder="您的信箱">
+                                <input type="text" class="form-control" name="email" placeholder="請輸入信箱">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="name" class="col-md-3 control-label" id="form-text">會員名稱</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="name" placeholder="您的名稱">
+                                <input type="text" class="form-control" name="name" placeholder="請輸入名稱">
                             </div>
                         </div>
                         
@@ -118,20 +91,20 @@
                         <div class="form-group">
                             <label for="commodity_name" class="col-md-3 control-label" id="form-text">商品名稱</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="commodity_name" placeholder="請務必填寫">
+                                <input type="text" class="form-control" name="commodity_name" placeholder="請輸入商品名稱">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="Product_Description" class="col-md-3 control-label" id="form-text">商品說明</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="Product_Description" placeholder="請務必填寫">
+                                <input type="text" class="form-control" name="Product_Description" placeholder="請輸入商品說明">
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <!-- Button -->                                       
                             <div class="col-md-offset-3 col-md-9">
-                                <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i>送出</button>
+                                <button id="btn-signup" type="submit" class="btn">送出</button>
                             </div>
                         </div>  
                     </form>
@@ -145,20 +118,6 @@
         </div>
     </div>
 
-    <footer class="fixed-bottom">
-        <div class="container-fluid hidden-sm hidden-md hidden-xs"></div>
-        <div class="footer flexcenter">
-            <div>
-                <ul class="footerlist">
-                    <li class="footeritem">
-                        <a href="">關於我們</a>
-                    </li>
-                    <li class="footeritem">
-                        <a href="">聯絡我們</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+    <%- include("footer.ejs") %>
 </body>
 </html>

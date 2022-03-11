@@ -1,7 +1,3 @@
-/* *{
-	border: 1px lightcoral solid;
-} */
-
 .textBlod {
 	font-weight: bold;
 }
@@ -87,13 +83,21 @@
 	position: relative;
 	right: 5vw;
 }
-.checkoutButton, .refuseButton{
+.checkoutButton{
 	margin: 0.5vh;
 	font-family: 'Kiwi Maru', serif;
 	font-weight: bolder;
 	font-size: 20px;
 	background-color: #555b6e;
 	color: #f9f9f9;
+}
+.refuseButton {
+	margin: 0.5vh;
+	font-family: 'Kiwi Maru', serif;
+	font-weight: bolder;
+	font-size: 20px;
+	background-color: #f9f9f9;
+	color: #555b6e;
 }
 .checkoutButton:hover, .refuseButton:hover {
 	background-color: #BEE3DB;
