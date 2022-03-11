@@ -15,7 +15,7 @@
 	background-color: #F0F0F0;
 }
 .cartHeight {
-	height: calc(100vh - 113.58px);
+	height: calc(100vh - 160px);
 }
 .productMain {
 	width: 90vw;
@@ -107,7 +107,7 @@
 /* 結帳頁CSS */
 .checkout {
 	display: flex;
-	height: calc(100vh - 193.58px);
+	height: calc(100vh - 160px);
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
@@ -134,6 +134,20 @@
 	font-weight: bolder;
 	color: #555b6e;
 }
+.form-group{
+	font-family: 'Kiwi Maru', serif;
+	font-size: 20px;
+	font-weight: bold;
+}
+#listSend{
+	margin-top: 2vh;
+}
+.payway{
+	font-family: 'Kiwi Maru', serif;
+	font-size: 20px;
+	font-weight: bold;
+
+}
 #form-text{
 	font-family: 'Kiwi Maru', serif;
 	font-size: 20px;
@@ -141,4 +155,7 @@
 }
 .form-control:focus{
 	background-color: rgba(190, 227, 219,0.5);
+}
+.card{
+	margin-top: 4vh;
 }

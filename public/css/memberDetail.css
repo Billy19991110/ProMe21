@@ -45,3 +45,6 @@ a:focus {
     font-weight: bolder;
 	color: #545b6e;
 }
+#btn-signup{
+	margin-top: 2vh;
+}

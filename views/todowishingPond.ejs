@@ -41,7 +41,17 @@ img{
 a, a:hover, a:focus {
     text-decoration: none;
 }
-
+.wish-card{
+ 
+	margin: 5px;
+	box-shadow: 2px 2px 10px   rgba(110, 108, 110, 0.767);
+	border-radius: 3px;
+  margin-top: 2vh;
+  
+}
+.container-wish{
+  width: 1286px;
+}
 </style>
 
 
@@ -50,48 +60,29 @@ a, a:hover, a:focus {
 <body>
   <%- include("header.ejs") %>
    
-        
-
 
 <!-- ====== 匯入許願池項目 ===== -->
         
     <div class="container  container-wish">
-		<div class="row" id="myoption">
-    <% for ( var result of result ) { %>
-		<div class="col-lg-4 mb-4">
+      <div class="row" id="myoption">
+		<% for ( var result of result ) { %>
+		<div class="col-lg-3 mb-3">
 			<a href="" style="text-decoration: none; color: black;" >
 			<div class="card wish-card">
 			<img  src="http://localhost:3000/images/upload_images/<%= result.image %>" alt="" class="card-img-top">
 			<div class="card-body">
-				<h5 class="card-title"><%= result.commodity_name %></h5>
-				<p class="card-text"><%= result.Product_Description %> </p>
-    
+			<h5 class="card-title"><%= result.commodity_name %></h5>
+			<p class="card-text"><%= result.Product_Description %> </p>
+		
 			</div>
 			</div>
 			</a>
 			</div>
 
-    <% } %>
+		<% } %>
 
+      </div>
     </div>
-<!-- ====== 匯入許願池項目 ===== -->
-
-
-
-	<!-- <div class="col-md-4"><img src="/素材圖片/商品圖/推巾/2018感謝祭.jpg" alt=""><h2>商品1</h2></div>
-            <div class="col-md-4"><img src="/素材圖片/商品圖/推巾/2019全國tour.jpg" alt=""><h2>商品2</h2></div>
-            <div class="col-md-4"><img src="/素材圖片/商品圖/推巾/2019春con.jpg" alt=""><h2>商品3</h2></div>
-
-            <div class="col-md-4"><img src="/素材圖片/商品圖/衣服/15周年單獨con.jpg" alt=""><h2>商品1</h2></div>
-            <div class="col-md-4"><img src="/素材圖片/商品圖/衣服/2018單獨con_正.jpg" alt=""><h2>商品2</h2></div>
-            <div class="col-md-4"><img src="/素材圖片/商品圖/衣服/2019全國tour.jpg" alt=""><h2>商品3</h2></div>
-
-            <div class="col-md-4"><img src="/素材圖片/商品圖/推扇/STU2021聖誕推扇_1.jpg" alt=""><h2>商品1</h2></div>
-            <div class="col-md-4"><img src="/素材圖片/商品圖/推扇/STU2021聖誕推扇_4.jpg" alt=""><h2>商品2</h2></div>
-            <div class="col-md-4"><img src="/素材圖片/商品圖/推扇/STU大正個人推扇_1.jpg" alt=""><h2>商品3</h2></div> -->
-            
-
-        </div>
     </div>
 
     

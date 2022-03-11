@@ -4,7 +4,7 @@
 
 /* 通用class */
 a {
-	font-size: large;
+	
 	text-decoration: none;
 	font-family: 'Kaisei Tokumin', serif;
 }
@@ -112,10 +112,12 @@ body {
 
 .itemlist a {
 	color: #faf9f9;
+	font-size: 25px;
 }
 
 .itemlist a:hover {
 	color: #89b0ae;
+
 }
 
 /* main */
@@ -145,6 +147,7 @@ body {
 
 .footeritem a {
 	color: #faf9f9;
+	font-size: 25px;
 }
 
 .footeritem a:hover {
