@@ -5,16 +5,18 @@
 			<div class="productImg flex6 divCenter">
 				<img class="imgSize" src="<%= Item.pictureSeat1 %>">
 			</div>
-			<div class="product flex7">
+			<div class="flex7 fontType">
 				<div class="productName textBlod"><%= Item.productName %></div>
+			</div>
+			<div class="flex8 fontType">
 				<div class="productPrice"><%= Item.productPrice %></div>
 			</div>
 			<div class="flex8">
 				<div class="minusButton divCenter"><input type="button" value="-"></div>
-				<div class="productAmount"><%= Item.productNUM %></div>
+				<div class="productAmount fontType"><%= Item.productNUM %></div>
 				<div class="plusButton divCenter"><input type="button" value="+"></div>
 			</div>
-			<div class="flex9 divCenter"><%= Item.productPrice * Item.productNUM %></div>
+			<div class="flex9 divCenter fontType"><%= Item.productPrice * Item.productNUM %></div>
 			<div class="flex10 divCenter"><a class="deleteButton"><i class="icofont-ui-close"></i></a></div>
 		</div>
 	</div>

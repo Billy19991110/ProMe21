@@ -92,7 +92,13 @@
                 <script>
                     $(function () {
                         document.getElementById("demo1").addEventListener("click", function () {
-                            swal("已加入購物車!", "祝您購物愉快>.<", "success");
+                            Swal.fire({
+                                icon: "success",
+                                color: "#545b6e",
+                                title: "已加入購物車!",
+                                text: "祝您購物愉快>.<",
+                                confirmButtonColor: '#545b6e'
+                            });
                             $('button:contains("OK")').click(function () {
                                 location.href = "http://localhost:3000/shopp/<%= Item.productID %>"
                             })
